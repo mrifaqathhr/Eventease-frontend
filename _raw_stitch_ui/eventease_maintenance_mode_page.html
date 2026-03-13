@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EventEase Maintenance Mode Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e8305e",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#211115",
+                        "champagne": "#fdfbf7",
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader", "serif"],
+                        "sans": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-champagne dark:bg-background-dark min-h-screen flex flex-col font-sans text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden">
+<div class="relative flex flex-1 w-full flex-col justify-center items-center p-4 sm:p-8">
+<!-- Main Card Container -->
+<div class="bg-white dark:bg-slate-800 shadow-xl rounded-2xl w-full max-w-[640px] overflow-hidden border border-slate-100 dark:border-slate-700">
+<div class="flex flex-col items-center p-8 sm:p-12 text-center">
+<!-- Illustration Area -->
+<div class="mb-8 relative flex items-center justify-center w-full">
+<div class="relative w-48 h-48 bg-background-light dark:bg-slate-700 rounded-full flex items-center justify-center overflow-hidden">
+<!-- Abstract illustration representing polishing/maintenance -->
+<div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary to-transparent"></div>
+<span class="material-symbols-outlined text-primary text-6xl" style="font-size: 80px;">
+                            cleaning_services
+                        </span>
+<!-- Decorative sparkles -->
+<span class="material-symbols-outlined text-primary/40 absolute top-10 right-10 text-xl animate-pulse">
+                            auto_awesome
+                        </span>
+<span class="material-symbols-outlined text-primary/40 absolute bottom-12 left-10 text-xl animate-pulse" style="animation-delay: 0.5s;">
+                            auto_awesome
+                        </span>
+</div>
+</div>
+<!-- Text Content -->
+<h1 class="font-display text-4xl sm:text-5xl font-medium text-slate-900 dark:text-white mb-4 tracking-tight">
+                    We'll Be Back Shortly
+                </h1>
+<p class="text-slate-500 dark:text-slate-400 text-base sm:text-lg max-w-md mx-auto mb-2 font-sans leading-relaxed">
+                    We're currently polishing up the platform with some scheduled maintenance to make your experience even more beautiful.
+                </p>
+<div class="mt-4 mb-10 flex items-center justify-center gap-2 bg-background-light dark:bg-slate-700/50 px-4 py-2 rounded-full">
+<span class="material-symbols-outlined text-primary text-sm">
+                        timer
+                    </span>
+<span class="text-slate-600 dark:text-slate-300 text-sm font-medium">Estimated downtime: 2 hours</span>
+</div>
+<!-- Primary Action -->
+<button class="group relative flex items-center justify-center gap-2 px-8 py-3 bg-primary hover:bg-primary/90 text-white rounded-xl transition-all duration-200 shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 w-full sm:w-auto min-w-[200px]">
+<span class="font-bold text-sm tracking-wide">Return to Homepage</span>
+<span class="material-symbols-outlined text-lg transition-transform duration-300 group-hover:translate-x-1">
+                        arrow_forward
+                    </span>
+</button>
+</div>
+<!-- Footer Section of Card -->
+<div class="bg-background-light dark:bg-slate-900/50 border-t border-slate-100 dark:border-slate-700 p-6 flex flex-col items-center justify-center text-center">
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-1">
+                    Need urgent assistance with your vendor profile?
+                </p>
+<a class="text-primary hover:text-primary/80 font-medium text-sm flex items-center gap-1 transition-colors underline decoration-primary/30 underline-offset-4 hover:decoration-primary" href="mailto:support@eventease.com">
+                    Contact support@eventease.com
+                </a>
+</div>
+</div>
+<!-- Branding Footer -->
+<div class="mt-8 flex items-center gap-2 opacity-60">
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-500">
+                diamond
+            </span>
+<span class="font-display font-bold text-slate-400 dark:text-slate-500 tracking-wider text-sm">EventEase</span>
+</div>
+</div>
+</body></html>

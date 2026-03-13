@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EventEase Search Results V1</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#e8305e",
+                        "primary-content": "#ffffff",
+                        "background-light": "#fcf8f9",
+                        "background-dark": "#211115",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d1b20",
+                        "text-main": "#1b0e11",
+                        "text-muted": "#974e60",
+                        "border-color": "#f3e7ea",
+                    },
+                    fontFamily: {
+                        display: ["Newsreader", "serif"],
+                        sans: ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        lg: "1rem",
+                        xl: "1.5rem",
+                        full: "9999px",
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for sidebar */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #e7d0d6;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main font-display min-h-screen flex flex-col antialiased">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 w-full bg-surface-light/95 dark:bg-surface-dark/95 backdrop-blur border-b border-border-color">
+<div class="max-w-[1440px] mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="text-primary">
+<span class="material-symbols-outlined text-4xl">favorite</span>
+</div>
+<h1 class="text-2xl font-bold tracking-tight text-text-main dark:text-white">EventEase</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-text-main hover:text-primary transition-colors dark:text-gray-200" href="#">Vendors</a>
+<a class="text-sm font-medium text-text-main hover:text-primary transition-colors dark:text-gray-200" href="#">Venues</a>
+<a class="text-sm font-medium text-text-main hover:text-primary transition-colors dark:text-gray-200" href="#">Inspiration</a>
+<a class="text-sm font-medium text-text-main hover:text-primary transition-colors dark:text-gray-200" href="#">Planning Tools</a>
+</nav>
+<div class="flex items-center gap-4">
+<a class="text-sm font-medium text-text-main hover:text-primary transition-colors dark:text-gray-200 hidden sm:block" href="#">Log In</a>
+<button class="h-10 px-6 bg-primary hover:bg-primary/90 text-white rounded-xl text-sm font-bold transition-all shadow-lg shadow-primary/20">
+                    Sign Up
+                </button>
+</div>
+</div>
+</header>
+<main class="flex-grow w-full max-w-[1440px] mx-auto px-6 py-8">
+<!-- Search & Breadcrumbs -->
+<div class="mb-8">
+<div class="flex items-center gap-2 text-sm text-text-muted mb-6">
+<a class="hover:underline" href="#">Home</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<a class="hover:underline" href="#">Vendors</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-text-main font-medium dark:text-gray-200">Photographers</span>
+</div>
+<div class="flex flex-col md:flex-row gap-6 items-center justify-between">
+<div class="w-full md:w-2/3 lg:w-1/2 relative">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none text-text-muted">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="w-full h-14 pl-12 pr-4 rounded-xl bg-surface-light border border-border-color focus:border-primary focus:ring-primary/20 text-lg shadow-sm placeholder:text-text-muted/70 transition-all dark:bg-surface-dark dark:border-gray-700 dark:text-white" placeholder="Search for wedding photographers, venues..." type="text" value="Wedding Photographer"/>
+</div>
+<div class="flex items-center gap-4 w-full md:w-auto justify-end">
+<div class="text-text-main dark:text-gray-200 font-medium whitespace-nowrap">
+                        Showing <span class="font-bold text-primary">24 results</span>
+</div>
+<div class="relative min-w-[180px]">
+<select class="w-full h-12 pl-4 pr-10 appearance-none bg-surface-light border border-border-color rounded-xl text-text-main focus:border-primary focus:ring-primary/20 cursor-pointer dark:bg-surface-dark dark:border-gray-700 dark:text-white">
+<option>Featured First</option>
+<option>Highest Rated</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+</select>
+<div class="absolute inset-y-0 right-3 flex items-center pointer-events-none text-text-muted">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<!-- Sticky Filter Sidebar -->
+<aside class="hidden lg:block col-span-3 h-fit sticky top-24">
+<div class="bg-surface-light dark:bg-surface-dark rounded-2xl border border-border-color p-6 shadow-sm dark:border-gray-700">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-lg font-bold text-text-main dark:text-white">Filters</h3>
+<button class="text-sm text-primary font-medium hover:underline">Reset all</button>
+</div>
+<!-- Filter Group: Location -->
+<div class="mb-8">
+<h4 class="text-sm font-bold text-text-main mb-3 uppercase tracking-wider dark:text-gray-200">Location</h4>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3 text-text-muted">location_on</span>
+<input class="w-full h-10 pl-10 pr-3 rounded-lg border border-border-color bg-background-light text-sm focus:border-primary focus:ring-0 dark:bg-gray-800 dark:border-gray-600 dark:text-white" placeholder="City or Zip Code" type="text"/>
+</div>
+<div class="mt-3 flex items-center gap-2">
+<span class="text-sm text-text-muted">Distance:</span>
+<input class="w-full accent-primary h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer" type="range"/>
+<span class="text-sm font-medium text-text-main dark:text-gray-200">25mi</span>
+</div>
+</div>
+<!-- Filter Group: Price Range -->
+<div class="mb-8 border-t border-border-color pt-6 dark:border-gray-700">
+<h4 class="text-sm font-bold text-text-main mb-3 uppercase tracking-wider dark:text-gray-200">Price Range</h4>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded text-primary border-gray-300 focus:ring-primary/20" type="checkbox"/>
+<span class="text-text-main group-hover:text-primary transition-colors dark:text-gray-300">Inexpensive ($)</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="w-5 h-5 rounded text-primary border-gray-300 focus:ring-primary/20" type="checkbox"/>
+<span class="text-text-main group-hover:text-primary transition-colors dark:text-gray-300">Affordable ($$)</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="w-5 h-5 rounded text-primary border-gray-300 focus:ring-primary/20" type="checkbox"/>
+<span class="text-text-main group-hover:text-primary transition-colors dark:text-gray-300">Moderate ($$$)</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded text-primary border-gray-300 focus:ring-primary/20" type="checkbox"/>
+<span class="text-text-main group-hover:text-primary transition-colors dark:text-gray-300">Luxury ($$$$)</span>
+</label>
+</div>
+</div>
+<!-- Filter Group: Style -->
+<div class="mb-8 border-t border-border-color pt-6 dark:border-gray-700">
+<h4 class="text-sm font-bold text-text-main mb-3 uppercase tracking-wider dark:text-gray-200">Style</h4>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded text-primary border-gray-300 focus:ring-primary/20" type="checkbox"/>
+<span class="text-text-main group-hover:text-primary transition-colors dark:text-gray-300">Traditional</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded text-primary border-gray-300 focus:ring-primary/20" type="checkbox"/>
+<span class="text-text-main group-hover:text-primary transition-colors dark:text-gray-300">Photojournalism</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded text-primary border-gray-300 focus:ring-primary/20" type="checkbox"/>
+<span class="text-text-main group-hover:text-primary transition-colors dark:text-gray-300">Fine Art</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded text-primary border-gray-300 focus:ring-primary/20" type="checkbox"/>
+<span class="text-text-main group-hover:text-primary transition-colors dark:text-gray-300">Dark &amp; Moody</span>
+</label>
+</div>
+</div>
+<button class="w-full py-3 bg-text-main hover:bg-black text-white rounded-xl font-bold transition-colors dark:bg-primary dark:hover:bg-primary/90">
+                        Apply Filters
+                    </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="col-span-12 lg:col-span-9 flex flex-col gap-12">
+<!-- Section A: Vendor Grid -->
+<section>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Vendor Card 1 -->
+<div class="group flex flex-col bg-surface-light dark:bg-surface-dark rounded-2xl overflow-hidden border border-border-color shadow-sm hover:shadow-lg transition-all dark:border-gray-700">
+<div class="relative h-60 overflow-hidden">
+<img alt="Elegant wedding couple holding hands in a field" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0Js7XAs3Z-3dhqGP9Cl7Fp33eNmw7ya0x6ewQ4XVLjb-QRszPMtKNhKKxrMuKbMC3_jAem3uUdolFnfx7REj9HVIGqAeFIYwNef7oFwVb58hBOA0ugDsZXPlJJ6RJvsw8G5L58_zh72McCaXjXcjg5I3QTXHFBB57M70xPDELOLmz962gtc4z2Qdlju4fhq9eR3SmFyLW88mGzPmOMGzt9o1ptW5stHoeFxvHbe8aSra_jdUC944JpLx_CPCKWb27Nsug9tUpf9Kl"/>
+<div class="absolute top-3 right-3 bg-white/90 dark:bg-black/70 backdrop-blur px-2 py-1 rounded-lg flex items-center gap-1 text-xs font-bold shadow-sm">
+<span class="material-symbols-outlined text-yellow-500 text-sm">star</span>
+<span>5.0</span>
+<span class="text-text-muted">(124)</span>
+</div>
+<div class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-lg text-xs font-bold shadow-sm">
+                                    Featured
+                                </div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold text-text-main dark:text-white">Lumina Weddings</h3>
+<button class="text-text-muted hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite_border</span>
+</button>
+</div>
+<p class="text-sm text-text-muted mb-4 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                    San Francisco, CA
+                                </p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-background-light dark:bg-gray-800 rounded border border-border-color text-xs text-text-muted">Fine Art</span>
+<span class="px-2 py-1 bg-background-light dark:bg-gray-800 rounded border border-border-color text-xs text-text-muted">Editorial</span>
+</div>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-border-color dark:border-gray-700">
+<span class="text-sm font-medium text-text-main dark:text-gray-300">From $3,500</span>
+<button class="text-primary text-sm font-bold hover:underline flex items-center gap-1">
+                                        View Profile 
+                                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Vendor Card 2 -->
+<div class="group flex flex-col bg-surface-light dark:bg-surface-dark rounded-2xl overflow-hidden border border-border-color shadow-sm hover:shadow-lg transition-all dark:border-gray-700">
+<div class="relative h-60 overflow-hidden">
+<img alt="Black and white photo of bride and groom kissing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7vXH3zmM_8muZZlj6lX0dRjcjwpdtcF3niHpM6gXfmSftnlUMaQfRYXKUaHzxZxyhyzwPtWcdOJfVb_3cZ5Juevz2hitOY4_vX9UMeBzj9IqOI-DArm2KPl8hy9d8-Z0yxzEpWtAjROTy_OxCZRh10TeiOkF0GBqbY2ZgIrwdXaTmOguzZgANAl1op5V6lKNy0qlHNseodPMeez6MfPrmlqpeKnuk9Ka0SOmgmklWmPTBQwbadlij9CxO9DMWI3WYLHuCnBPUYNij"/>
+<div class="absolute top-3 right-3 bg-white/90 dark:bg-black/70 backdrop-blur px-2 py-1 rounded-lg flex items-center gap-1 text-xs font-bold shadow-sm">
+<span class="material-symbols-outlined text-yellow-500 text-sm">star</span>
+<span>4.9</span>
+<span class="text-text-muted">(86)</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold text-text-main dark:text-white">Forever Captured</h3>
+<button class="text-text-muted hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite_border</span>
+</button>
+</div>
+<p class="text-sm text-text-muted mb-4 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                    Napa Valley, CA
+                                </p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-background-light dark:bg-gray-800 rounded border border-border-color text-xs text-text-muted">Documentary</span>
+<span class="px-2 py-1 bg-background-light dark:bg-gray-800 rounded border border-border-color text-xs text-text-muted">Candid</span>
+</div>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-border-color dark:border-gray-700">
+<span class="text-sm font-medium text-text-main dark:text-gray-300">From $2,800</span>
+<button class="text-primary text-sm font-bold hover:underline flex items-center gap-1">
+                                        View Profile 
+                                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Vendor Card 3 -->
+<div class="group flex flex-col bg-surface-light dark:bg-surface-dark rounded-2xl overflow-hidden border border-border-color shadow-sm hover:shadow-lg transition-all dark:border-gray-700">
+<div class="relative h-60 overflow-hidden">
+<img alt="Bright airy wedding venue setup with flowers" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg_6vvMLhkiT0AF38LX6dTRhCq36cmHixAUgeDqH3FKQp7jK3Ty9tMtSj0AYefaHM99BkMfUMij27ywGDlYSWyMGetBJNrC4EliSYKFGMe7VtOD3it01B1u1Fq35S76_glygY-rFtosAqdDZ93Y73nAUdmGReHfQBP2dgXUbj4xVjbSCZNapovNy_RvjBFOQwWklcjO1oxWgCuK5Kik1o2FWy2flmoLbarypZ4o5ijNg_7Mo4zA_YLmlY5p-8uYlBPSTaRB9R1nshH"/>
+<div class="absolute top-3 right-3 bg-white/90 dark:bg-black/70 backdrop-blur px-2 py-1 rounded-lg flex items-center gap-1 text-xs font-bold shadow-sm">
+<span class="material-symbols-outlined text-yellow-500 text-sm">star</span>
+<span>4.8</span>
+<span class="text-text-muted">(42)</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold text-text-main dark:text-white">Golden Hour Photo</h3>
+<button class="text-text-muted hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite_border</span>
+</button>
+</div>
+<p class="text-sm text-text-muted mb-4 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                    Sonoma, CA
+                                </p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-background-light dark:bg-gray-800 rounded border border-border-color text-xs text-text-muted">Natural Light</span>
+</div>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-border-color dark:border-gray-700">
+<span class="text-sm font-medium text-text-main dark:text-gray-300">From $3,200</span>
+<button class="text-primary text-sm font-bold hover:underline flex items-center gap-1">
+                                        View Profile 
+                                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Vendor Card 4 -->
+<div class="group flex flex-col bg-surface-light dark:bg-surface-dark rounded-2xl overflow-hidden border border-border-color shadow-sm hover:shadow-lg transition-all dark:border-gray-700">
+<div class="relative h-60 overflow-hidden">
+<img alt="Close up of wedding rings on lace fabric" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEMXSRoCsFFW53nClQaj-6QALCbof7ZE6h3HcIE_F-GsAInUB8AW-mo4jN4MPd2GvrVBTPH2-wHFQ42TqgGNjFzY-lP2C04T9zlIycbbZBXg7qHmcd3XRu8zGxrZmdjG0xZAy8UNyeVZto9nC3kUZRBokfAj_qmb_HRV_k2OErBwoqFPBjoBOUXmosLV7NkaESd5tMDttp_dhlK_6ZmxzelzdRyS4Tugv9dM82mI9Br01NAVxTcvARGLBB7wov5AZ2wZv6q47AkWvo"/>
+<div class="absolute top-3 right-3 bg-white/90 dark:bg-black/70 backdrop-blur px-2 py-1 rounded-lg flex items-center gap-1 text-xs font-bold shadow-sm">
+<span class="material-symbols-outlined text-yellow-500 text-sm">star</span>
+<span>5.0</span>
+<span class="text-text-muted">(15)</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold text-text-main dark:text-white">Velvet Lens</h3>
+<button class="text-text-muted hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite_border</span>
+</button>
+</div>
+<p class="text-sm text-text-muted mb-4 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                    Oakland, CA
+                                </p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-background-light dark:bg-gray-800 rounded border border-border-color text-xs text-text-muted">Moody</span>
+<span class="px-2 py-1 bg-background-light dark:bg-gray-800 rounded border border-border-color text-xs text-text-muted">Cinematic</span>
+</div>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-border-color dark:border-gray-700">
+<span class="text-sm font-medium text-text-main dark:text-gray-300">From $2,500</span>
+<button class="text-primary text-sm font-bold hover:underline flex items-center gap-1">
+                                        View Profile 
+                                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Vendor Card 5 -->
+<div class="group flex flex-col bg-surface-light dark:bg-surface-dark rounded-2xl overflow-hidden border border-border-color shadow-sm hover:shadow-lg transition-all dark:border-gray-700">
+<div class="relative h-60 overflow-hidden">
+<img alt="Wedding reception table setting with candles" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKO6Ql-RaPztI2NxeNLOGyeL3-h1j6ANnPQ8o5st1Un9gJsKGO39_ZhRxrj-PXMLvMXoHzC0DKJutxTIyj_XdWVr2qAjfTVbYeXS-C-29IfZIpxDTyGeIFgn_W2RTUTK1l3TzP6i-IIp2wsOPVcRAzVUj0Qbv3ITU21YeUaoupak7OB08Yz2x4iALDgk996lVVKfDBVmx6txTk22a0I-6EvFa_pJiXCpH3aCyxI40N-ZSEc1-6oPH9Ky9tfDCaWYjI_LNhz5WXc0Ux"/>
+<div class="absolute top-3 right-3 bg-white/90 dark:bg-black/70 backdrop-blur px-2 py-1 rounded-lg flex items-center gap-1 text-xs font-bold shadow-sm">
+<span class="material-symbols-outlined text-yellow-500 text-sm">star</span>
+<span>4.7</span>
+<span class="text-text-muted">(56)</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold text-text-main dark:text-white">Moments &amp; Memories</h3>
+<button class="text-text-muted hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite_border</span>
+</button>
+</div>
+<p class="text-sm text-text-muted mb-4 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                    San Jose, CA
+                                </p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-background-light dark:bg-gray-800 rounded border border-border-color text-xs text-text-muted">Classic</span>
+</div>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-border-color dark:border-gray-700">
+<span class="text-sm font-medium text-text-main dark:text-gray-300">From $3,000</span>
+<button class="text-primary text-sm font-bold hover:underline flex items-center gap-1">
+                                        View Profile 
+                                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Vendor Card 6 -->
+<div class="group flex flex-col bg-surface-light dark:bg-surface-dark rounded-2xl overflow-hidden border border-border-color shadow-sm hover:shadow-lg transition-all dark:border-gray-700">
+<div class="relative h-60 overflow-hidden">
+<img alt="Bride holding bouquet of white roses" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRn7_J6XQvRnowPf6gW0iLo-gbyXAWTKIqcyzcYJ9USFimLq-K6ejiq9-Ggvj8cuKDAyKoCl_Ku0koqxAffB8W6qzrd8ZIptmc-sRXFvMAUM7Lb0pBYftUE5-espgoDh9w8orVBTsRglmqGuB2Q8LDh-ujS0aA-MqHCADaOhdUgmRmH8IcqnZ_KAq5OVYA4IgvDVZO69GerZAyWFxQHEVIH58-sLBxAx3JPUjiRJxYf_1lnwUs8s_1HBLUAdDCjOv4Q452e334eKLy"/>
+<div class="absolute top-3 right-3 bg-white/90 dark:bg-black/70 backdrop-blur px-2 py-1 rounded-lg flex items-center gap-1 text-xs font-bold shadow-sm">
+<span class="material-symbols-outlined text-yellow-500 text-sm">star</span>
+<span>4.9</span>
+<span class="text-text-muted">(203)</span>
+</div>
+<div class="absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded-lg text-xs font-bold shadow-sm">
+                                    Top Rated
+                                </div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold text-text-main dark:text-white">Ethereal Snaps</h3>
+<button class="text-text-muted hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite_border</span>
+</button>
+</div>
+<p class="text-sm text-text-muted mb-4 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                    San Francisco, CA
+                                </p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-1 bg-background-light dark:bg-gray-800 rounded border border-border-color text-xs text-text-muted">Artistic</span>
+<span class="px-2 py-1 bg-background-light dark:bg-gray-800 rounded border border-border-color text-xs text-text-muted">Film</span>
+</div>
+<div class="mt-auto flex items-center justify-between pt-4 border-t border-border-color dark:border-gray-700">
+<span class="text-sm font-medium text-text-main dark:text-gray-300">From $4,200</span>
+<button class="text-primary text-sm font-bold hover:underline flex items-center gap-1">
+                                        View Profile 
+                                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="flex justify-center mt-10">
+<button class="px-8 py-3 bg-white dark:bg-surface-dark border border-border-color hover:border-primary text-text-main dark:text-white rounded-xl font-medium transition-all shadow-sm">
+                            Load more vendors
+                        </button>
+</div>
+</section>
+<!-- Section B: Category Cards -->
+<section class="py-6">
+<h2 class="text-2xl font-bold text-text-main dark:text-white mb-6">Explore related categories</h2>
+<div class="flex gap-4 overflow-x-auto pb-4 custom-scrollbar">
+<!-- Category 1 -->
+<a class="flex items-center gap-4 min-w-[240px] p-2 pr-6 bg-surface-light dark:bg-surface-dark border border-border-color rounded-xl hover:shadow-md transition-all group dark:border-gray-700" href="#">
+<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0">
+<img alt="Floral wedding venue setup" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtGOyu17WuehbCis9QUc0pzK3rI7hz59vacCKnqMlH7HnuUt0Me9nY5kE7r5b64OmZLBGdJNAUY3ncYAblv5v9BBNJSLWnayHuD80MJOet24E9EGjhu-CmCmVmtbim0l7YTbUEAqoOZrnJXH-aywA1aPVesa2Dp1TMLKjBwOLd-f1dOez7IiT9yJsFrGALwHS8gbeOtZmzldYy-o61-1pUPOD32U2EZACQ5oaPST08a5xC4NepcneIFpsX5Jm3zctdl8cv2OIemr5b"/>
+</div>
+<div>
+<h4 class="font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">Venues</h4>
+<span class="text-xs text-text-muted">1,204 listings</span>
+</div>
+</a>
+<!-- Category 2 -->
+<a class="flex items-center gap-4 min-w-[240px] p-2 pr-6 bg-surface-light dark:bg-surface-dark border border-border-color rounded-xl hover:shadow-md transition-all group dark:border-gray-700" href="#">
+<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0">
+<img alt="Wedding flowers bouquet" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNRjqNp26SRiO-VdrkATfvCaepONooawWnfPzEoC_LPm-RHQy_pnCou3tlx1dEdDvo14ntOP00c6OZ8PMZiXHohWCDCJch1al4tKEUtKxrgnd0jOMlX5euUl7d5fsxhxPwMSn--rgiTunlocGbj97EJKeLDvvE6cY_2Ys75pEqAtrrD5gW4WKWtOSH13_kCrie9AXDdDq3yuYkS58YmW1hwGBk5_VRnybdL3z6n1qj4ZxSxYqTfYOUOewsbeGZnLncm2rj7jcXzJdh"/>
+</div>
+<div>
+<h4 class="font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">Florists</h4>
+<span class="text-xs text-text-muted">842 listings</span>
+</div>
+</a>
+<!-- Category 3 -->
+<a class="flex items-center gap-4 min-w-[240px] p-2 pr-6 bg-surface-light dark:bg-surface-dark border border-border-color rounded-xl hover:shadow-md transition-all group dark:border-gray-700" href="#">
+<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0">
+<img alt="DJ mixing music at wedding" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnFgxJrQzGJonfRRwFCq0SA21MsO1q6NM4j4cU7Oy2AnCmxhut0-_RA8Wzfr7ZDT5vamVtIqOAoO2xURUvzFuTRqCZymkVyU815mMdE6n2yUFoT0ADp4991kXT167hATfWq5Oj_wWzq2k-39MtgBMA9MzT4XelFgXKva93VrBk1pi2X2usiPLzYVLx9gd6dD35H53YHO8MeNqWjQmFauwlE5qj_p6R40MLFPsmPoZzjSd7ldFNNrd1BZorFOlkZDqLUDCG9ZbDVbiR"/>
+</div>
+<div>
+<h4 class="font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">Music &amp; DJs</h4>
+<span class="text-xs text-text-muted">530 listings</span>
+</div>
+</a>
+<!-- Category 4 -->
+<a class="flex items-center gap-4 min-w-[240px] p-2 pr-6 bg-surface-light dark:bg-surface-dark border border-border-color rounded-xl hover:shadow-md transition-all group dark:border-gray-700" href="#">
+<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0">
+<img alt="Wedding cake with flowers" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc0CecBY362HH9uiFTtecjyHU1YE__7eutwNvb6dYFNaDxnTs6aaMj08Jk-_nglJUPreRRXhGCnqIAbnRTHpPxL3Mct12MlgHdIW6u_o90NjfhI76qLEY0iLyTGTGGYuzODRejAc5HaTDnnVifoOY1MK5kDZitUQ0-mTC9oOgIy-Nw7U1fc5FY5JVkV1hx5Ia2wazJoPX1fBhtPCd2vd0uMi4YOuCqHd8IjLb52t2lmgl4Le56_GqoaFvJaJecEUQBK7sbVZP-8eSo"/>
+</div>
+<div>
+<h4 class="font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">Cakes</h4>
+<span class="text-xs text-text-muted">329 listings</span>
+</div>
+</a>
+</div>
+</section>
+<!-- Section C: Blog/Inspiration Grid -->
+<section class="border-t border-border-color pt-10 dark:border-gray-700">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h2 class="text-2xl font-bold text-text-main dark:text-white">Planning Inspiration</h2>
+<p class="text-text-muted mt-1">Tips and ideas for your perfect day</p>
+</div>
+<a class="text-primary font-bold text-sm hover:underline" href="#">View all articles</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Article 1 -->
+<article class="flex flex-col gap-4 group cursor-pointer">
+<div class="rounded-xl overflow-hidden h-48 w-full">
+<img alt="Wedding couple walking on beach at sunset" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQhr-rzVMasbEWSbQ3yOBxAslXU_0rd5CcRgZRhOVUiiQvSebFjgilSFqAsFleqhWp3hRf5AsjOlbhDiMF_zmDiddcIaequzeaEBjd8cBdBQZ4G3171hdJBJD4qJ5Z4NGg8lG9lLp9-Bk_v8puGuEzj-NgRDLkEqy0Hg2BQT_JKIlIdASL0Dw1-LuYSDmXlI56cT-remAjW5kzJvXFI5oDbxLZohFpNDsAfVwN3CFslFReSdzmGHMW_hGn3ClI_uOazWCpcyJE4B0M"/>
+</div>
+<div>
+<span class="text-primary text-xs font-bold uppercase tracking-wider">Photography Tips</span>
+<h3 class="text-lg font-bold text-text-main mt-2 group-hover:text-primary transition-colors dark:text-white">10 Questions to Ask Your Wedding Photographer Before Booking</h3>
+<p class="text-sm text-text-muted mt-2 line-clamp-2">Finding the right photographer is crucial. Make sure you cover these essential topics during your consultation to ensure a perfect match.</p>
+</div>
+</article>
+<!-- Article 2 -->
+<article class="flex flex-col gap-4 group cursor-pointer">
+<div class="rounded-xl overflow-hidden h-48 w-full">
+<img alt="Bridal party laughing together" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDBKRgSvTdLaEOuL4JC-XiZuInxRA8qQgzDcxJOriQfa7FLZwaGIRigqTYmCP3EvWErihuc4GB8QB0Cy4IuPfcM47cXWBzI4NmV95njKDuGoZwK_0_5BV7E2az2iZ8PYfM4JIWxQQQINDAaYzJ9Hmr7AABaLxUu2VgkFG4JWRXP6E2GlWmLE4XvIcNN-2YnLqhmG4oV3FZzAkKO1XY_MFh_jVmPdxFbKXMcbMStDpR7YFUc5ppYwGYzGNU1FQmR_t4Fu7bzZy_3xoZ"/>
+</div>
+<div>
+<span class="text-primary text-xs font-bold uppercase tracking-wider">Planning</span>
+<h3 class="text-lg font-bold text-text-main mt-2 group-hover:text-primary transition-colors dark:text-white">Timeline Guide: When to Book Your Vendors</h3>
+<p class="text-sm text-text-muted mt-2 line-clamp-2">Don't let your dream vendors get booked up. Use our comprehensive 12-month checklist to stay ahead of the game.</p>
+</div>
+</article>
+<!-- Article 3 -->
+<article class="flex flex-col gap-4 group cursor-pointer">
+<div class="rounded-xl overflow-hidden h-48 w-full">
+<img alt="Wedding dress hanging by window" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIRVw2H-wTNGQYFZnUiRLonMaVjJJaLjx7HQ1a2yu39Avs29aZxeLmyBhXFnWK8nXazpAWNI92LHbutSsnMnbxWpfXndxNbrUmeE4O-RAcK2vI9wvpz_nnHeCuPXXgKIYcFD9SPxl1mJr90_wqvBB6lpcaQLVRzTa9V1Jm1JI7dg5w9uCB25ORF6jttTIRWSTwP1F6PeU8FHZL56OxDU1CJd6qvFJdRrUBMkY-MBj9q6fR-t3K8kwfWdJ2u5q9t7dRuw-QoG1fFkwt"/>
+</div>
+<div>
+<span class="text-primary text-xs font-bold uppercase tracking-wider">Style Trends</span>
+<h3 class="text-lg font-bold text-text-main mt-2 group-hover:text-primary transition-colors dark:text-white">2024 Wedding Photography Trends You'll Love</h3>
+<p class="text-sm text-text-muted mt-2 line-clamp-2">From direct flash party shots to blurred motion romance, discover the aesthetic trends defining modern wedding albums.</p>
+</div>
+</article>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-light dark:bg-surface-dark border-t border-border-color mt-20 pt-16 pb-8 dark:border-gray-700">
+<div class="max-w-[1440px] mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary text-3xl">favorite</span>
+<span class="text-xl font-bold text-text-main dark:text-white">EventEase</span>
+</div>
+<p class="text-sm text-text-muted">Making your special moments unforgettable. The leading marketplace for wedding professionals.</p>
+</div>
+<div>
+<h4 class="font-bold text-text-main mb-4 dark:text-white">Company</h4>
+<ul class="space-y-2 text-sm text-text-muted">
+<li><a class="hover:text-primary" href="#">About Us</a></li>
+<li><a class="hover:text-primary" href="#">Careers</a></li>
+<li><a class="hover:text-primary" href="#">Press</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-text-main mb-4 dark:text-white">Support</h4>
+<ul class="space-y-2 text-sm text-text-muted">
+<li><a class="hover:text-primary" href="#">Help Center</a></li>
+<li><a class="hover:text-primary" href="#">Terms of Service</a></li>
+<li><a class="hover:text-primary" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-text-main mb-4 dark:text-white">Connect</h4>
+<div class="flex gap-4">
+<a class="w-8 h-8 rounded-full bg-background-light flex items-center justify-center text-text-main hover:bg-primary hover:text-white transition-colors border border-border-color dark:bg-gray-800 dark:text-white dark:border-gray-600" href="#">
+<span class="font-sans font-bold text-xs">IG</span>
+</a>
+<a class="w-8 h-8 rounded-full bg-background-light flex items-center justify-center text-text-main hover:bg-primary hover:text-white transition-colors border border-border-color dark:bg-gray-800 dark:text-white dark:border-gray-600" href="#">
+<span class="font-sans font-bold text-xs">FB</span>
+</a>
+<a class="w-8 h-8 rounded-full bg-background-light flex items-center justify-center text-text-main hover:bg-primary hover:text-white transition-colors border border-border-color dark:bg-gray-800 dark:text-white dark:border-gray-600" href="#">
+<span class="font-sans font-bold text-xs">PI</span>
+</a>
+</div>
+</div>
+</div>
+<div class="border-t border-border-color pt-8 text-center text-sm text-text-muted dark:border-gray-700">
+                © 2024 EventEase Inc. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

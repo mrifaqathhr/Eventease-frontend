@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EventEase Vendor Login</title>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600;700;800&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#e8305e",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#211115",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d1b20",
+                        "text-main": "#181113",
+                        "text-muted": "#88636c",
+                    },
+                    fontFamily: {
+                        display: ["Newsreader", "serif"],
+                        sans: ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        lg: "1rem",
+                        xl: "1.5rem",
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-sans text-text-main dark:text-white min-h-screen flex flex-col">
+<div class="flex flex-1 min-h-screen">
+<!-- Left Panel: Branding & Value Prop -->
+<div class="hidden lg:flex flex-1 relative bg-surface-dark w-1/2 overflow-hidden flex-col justify-between p-12 text-white">
+<!-- Background Image with Overlay -->
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10"></div>
+<img alt="Elegant event setting with warm lighting" class="w-full h-full object-cover opacity-80" data-alt="Elegant event setting with warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALeTXgm9ctgetkh7BnLObEDmW7qy69MqRBjngJhVghgY6dqENj6Yq63XSUeGLQjdUzW-q2Qzv3-TEHVhLAGM9Q-fxEVbIhpfSDs6GhdS4MCRlXdxj9Dk1L86Qa5MPNH4NQSrf35-iphmje9ol28VXYf9-AsG_rgnP5qi68ZRH0eKUYNEoIFcHzHtTVH37MdOZTv2xY-yJIFqoFHAHY7kqZDkqNsseIZPIMyyWPrTE-usRyMAXoiCyoCP9mpoNwUJb7SFkChVwGq1Pu"/>
+</div>
+<!-- Logo -->
+<div class="relative z-20 flex items-center gap-3">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M39.5563 34.1455V13.8546C39.5563 15.708 36.8773 17.3437 32.7927 18.3189C30.2914 18.916 27.263 19.2655 24 19.2655C20.737 19.2655 17.7086 18.916 15.2073 18.3189C11.1227 17.3437 8.44365 15.708 8.44365 13.8546V34.1455C8.44365 35.9988 11.1227 37.6346 15.2073 38.6098C17.7086 39.2069 20.737 39.5564 24 39.5564C27.263 39.5564 30.2914 39.2069 32.7927 38.6098C36.8773 37.6346 39.5563 35.9988 39.5563 34.1455Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519ZM37.5563 18.7877C36.3176 19.3925 34.8502 19.8839 33.2571 20.2642C30.5836 20.9025 27.3973 21.2655 24 21.2655C20.6027 21.2655 17.4164 20.9025 14.7429 20.2642C13.1498 19.8839 11.6824 19.3925 10.4436 18.7877V34.1275C10.4515 34.1545 10.5427 34.4867 11.379 35.027C12.298 35.6207 13.7492 36.2054 15.6717 36.6644C18.0007 37.2205 20.8712 37.5564 24 37.5564C27.1288 37.5564 29.9993 37.2205 32.3283 36.6644C34.2508 36.2054 35.702 35.6207 36.621 35.027C37.4573 34.4867 37.5485 34.1546 37.5563 34.1275V18.7877ZM41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455L6.44365 13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<span class="text-2xl font-bold font-display tracking-tight text-white">EventEase</span>
+</div>
+<!-- Testimonial / Value Prop -->
+<div class="relative z-20 max-w-lg mb-8">
+<h1 class="font-display text-4xl md:text-5xl font-bold leading-tight mb-4">
+                    Scale Your Event Business to New Heights
+                </h1>
+<p class="text-lg text-white/90 font-light leading-relaxed mb-8">
+                    "Since joining EventEase, our bookings have increased by 40% and client management has never been smoother. It's the premium tool for premium vendors."
+                </p>
+<div class="flex items-center gap-4">
+<img alt="Portrait of Sarah Jenkins" class="w-12 h-12 rounded-full object-cover border-2 border-white/20" data-alt="Portrait of a female event planner" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxLBSqZmkV1vf1UhkSfIHAPjXUI57XypgM1K5J1_Y97NdO2ObR_JsT9U7kp7ev0hJLNAsxgQ5bjYz9ArQx6SMiJXhtkCF9mPCmpMPUBu2j-Mr9lfpY7fZnRBgTwqoQZLu8mc1y-bGJh1ZzJSXDA2hfRqNXpXvZ9wqxw0n5F_Wcc8e3rzdKKUkTnkyePOgiI3OjDKY12q6ZtuW2JHDU75oO0ZonBTnaQk4ttH6Z5apO4FlPOnYUQsoeoxsc8U1O3eVgNo_6oOaI3XMv"/>
+<div>
+<p class="font-medium">Sarah Jenkins</p>
+<p class="text-sm text-white/70">Founder, Ethereal Weddings</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Panel: Authentication Form -->
+<div class="flex-1 flex flex-col justify-center items-center p-6 sm:p-12 w-full lg:w-1/2 bg-background-light dark:bg-background-dark">
+<div class="w-full max-w-md">
+<!-- Mobile Logo (Visible only on small screens) -->
+<div class="lg:hidden flex justify-center mb-8">
+<div class="flex items-center gap-2 text-text-main dark:text-white">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M39.5563 34.1455V13.8546C39.5563 15.708 36.8773 17.3437 32.7927 18.3189C30.2914 18.916 27.263 19.2655 24 19.2655C20.737 19.2655 17.7086 18.916 15.2073 18.3189C11.1227 17.3437 8.44365 15.708 8.44365 13.8546V34.1455C8.44365 35.9988 11.1227 37.6346 15.2073 38.6098C17.7086 39.2069 20.737 39.5564 24 39.5564C27.263 39.5564 30.2914 39.2069 32.7927 38.6098C36.8773 37.6346 39.5563 35.9988 39.5563 34.1455Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519ZM37.5563 18.7877C36.3176 19.3925 34.8502 19.8839 33.2571 20.2642C30.5836 20.9025 27.3973 21.2655 24 21.2655C20.6027 21.2655 17.4164 20.9025 14.7429 20.2642C13.1498 19.8839 11.6824 19.3925 10.4436 18.7877V34.1275C10.4515 34.1545 10.5427 34.4867 11.379 35.027C12.298 35.6207 13.7492 36.2054 15.6717 36.6644C18.0007 37.2205 20.8712 37.5564 24 37.5564C27.1288 37.5564 29.9993 37.2205 32.3283 36.6644C34.2508 36.2054 35.702 35.6207 36.621 35.027C37.4573 34.4867 37.5485 34.1546 37.5563 34.1275V18.7877ZM41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455L6.44365 13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<span class="text-xl font-bold font-display tracking-tight">EventEase</span>
+</div>
+</div>
+<!-- Auth Card -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-xl shadow-lg border border-neutral-200 dark:border-neutral-800 p-8 sm:p-10">
+<div class="mb-8 text-center">
+<h2 class="text-2xl font-bold font-display text-text-main dark:text-white mb-2">Welcome Back</h2>
+<p class="text-text-muted text-sm">Manage your events and grow your business.</p>
+</div>
+<!-- Tabs -->
+<div class="flex border-b border-[#e5dcde] dark:border-neutral-700 mb-8 w-full">
+<button class="flex-1 flex flex-col items-center justify-center border-b-2 border-primary text-text-main dark:text-white pb-3 pt-2 transition-colors">
+<span class="text-sm font-bold tracking-wide">Login</span>
+</button>
+<a class="flex-1 flex flex-col items-center justify-center border-b-2 border-transparent text-text-muted hover:text-text-main dark:hover:text-white pb-3 pt-2 transition-colors" href="#">
+<span class="text-sm font-bold tracking-wide">Register</span>
+</a>
+</div>
+<!-- Form -->
+<form class="flex flex-col gap-5">
+<label class="flex flex-col gap-2">
+<span class="text-sm font-medium text-text-main dark:text-white">Email Address</span>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-text-muted">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</div>
+<input class="w-full bg-background-light dark:bg-[#1a0e10] text-text-main dark:text-white border border-[#e5dcde] dark:border-neutral-700 rounded-lg h-12 pl-10 pr-4 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-text-muted/60" placeholder="vendor@example.com" required="" type="email"/>
+</div>
+</label>
+<label class="flex flex-col gap-2">
+<span class="text-sm font-medium text-text-main dark:text-white">Password</span>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-text-muted">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+</div>
+<input class="w-full bg-background-light dark:bg-[#1a0e10] text-text-main dark:text-white border border-[#e5dcde] dark:border-neutral-700 rounded-lg h-12 pl-10 pr-4 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder:text-text-muted/60" placeholder="••••••••" required="" type="password"/>
+</div>
+</label>
+<div class="flex items-center justify-between mt-1">
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="w-4 h-4 rounded text-primary border-gray-300 focus:ring-primary focus:ring-offset-0 bg-gray-50 dark:bg-gray-800 dark:border-gray-600" type="checkbox"/>
+<span class="text-sm text-text-muted group-hover:text-text-main dark:group-hover:text-white transition-colors">Remember me</span>
+</label>
+<a class="text-sm font-medium text-primary hover:text-primary/80 transition-colors" href="#">Forgot Password?</a>
+</div>
+<button class="mt-4 flex w-full items-center justify-center rounded-xl h-12 bg-primary hover:bg-rose-600 text-white text-base font-bold shadow-lg shadow-rose-200 dark:shadow-rose-900/20 transition-all transform active:scale-[0.98]" type="submit">
+                            Login to Dashboard
+                        </button>
+</form>
+<div class="mt-8 text-center">
+<p class="text-sm text-text-muted">
+                            Don't have an account? 
+                            <a class="font-bold text-text-main dark:text-white hover:text-primary transition-colors" href="#">Register as a Vendor</a>
+</p>
+</div>
+</div>
+<div class="mt-8 flex justify-center gap-6 text-xs text-text-muted">
+<a class="hover:text-text-main dark:hover:text-white transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-text-main dark:hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-text-main dark:hover:text-white transition-colors" href="#">Help Center</a>
+</div>
+</div>
+</div>
+</div>
+</body></html>

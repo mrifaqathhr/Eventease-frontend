@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EventEase Vendor Notifications</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#e8305e",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#211115",
+                    },
+                    fontFamily: {
+                        display: ["Newsreader", "serif"],
+                        sans: ['"Noto Sans"', "sans-serif"]
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        lg: "1rem",
+                        xl: "1.5rem",
+                        full: "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans antialiased">
+<div class="relative flex h-screen w-full overflow-hidden">
+<!-- Sidebar -->
+<aside class="w-64 flex-shrink-0 flex flex-col bg-white dark:bg-[#2a171c] border-r border-slate-200 dark:border-slate-800 h-full">
+<div class="p-6 pb-2">
+<div class="flex items-center gap-3 mb-8">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 ring-2 ring-primary/20" data-alt="Vendor profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCnfouk2ol-daWkTR1ULPVNLkqQJAaATKfdcdI9Hj_JKuJXb7hs1MRW_WsKShcjx-xGMdgYy5IOF6ctQB8KnFIaeJRdS4DR10zcizDzbO9vygY3vpHyr6p5-7n9OFjIl-JVWOiaaPQPks2ljxiz4MDc5pQUY89JmsS0MJafetlvYey-b5nD6GD1akIKutvogSeMZb2xNv99vhQ0uHGhXcz9YnAkelzofSYBug37WWIJYa2hWM_4lOttxzCWsnXOI4paBKYg0lT6CHJ6");'></div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-white text-base font-bold leading-tight font-display">EventEase</h1>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal">Vendor Portal</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary dark:group-hover:text-primary transition-colors">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary dark:group-hover:text-primary transition-colors">favorite</span>
+<span class="text-sm font-medium">Leads</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary dark:group-hover:text-primary transition-colors">calendar_month</span>
+<span class="text-sm font-medium">Calendar</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary dark:text-primary font-medium" href="#">
+<span class="material-symbols-outlined fill-1">notifications</span>
+<span class="text-sm">Notifications</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary dark:group-hover:text-primary transition-colors">person</span>
+<span class="text-sm font-medium">Profile</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-6 border-t border-slate-100 dark:border-slate-800">
+<button class="flex items-center gap-3 px-3 py-2 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors w-full">
+<span class="material-symbols-outlined">logout</span>
+<span class="text-sm font-medium">Sign Out</span>
+</button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col h-full overflow-hidden bg-background-light dark:bg-background-dark">
+<div class="flex-1 overflow-y-auto">
+<div class="max-w-5xl mx-auto px-6 py-8 md:px-12 md:py-10">
+<!-- Header Area -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+<div>
+<h1 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white font-display tracking-tight">Notifications</h1>
+<p class="text-slate-500 dark:text-slate-400 mt-1">Stay updated with your latest leads and account activity.</p>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-white/5 border border-slate-200 dark:border-slate-700 rounded-lg shadow-sm hover:bg-slate-50 dark:hover:bg-white/10 transition-all group">
+<span class="material-symbols-outlined text-primary text-[20px]">done_all</span>
+<span class="text-sm font-bold text-slate-700 dark:text-slate-200">Mark all as read</span>
+</button>
+</div>
+<!-- Filters -->
+<div class="flex gap-2 overflow-x-auto pb-4 mb-2 no-scrollbar">
+<button class="flex-shrink-0 px-4 py-2 rounded-full bg-primary text-white text-sm font-medium shadow-sm shadow-primary/30 transition-transform active:scale-95">
+                            All
+                        </button>
+<button class="flex-shrink-0 px-4 py-2 rounded-full bg-white dark:bg-white/5 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-primary/50 dark:hover:border-primary/50 text-sm font-medium transition-colors">
+                            Unread <span class="ml-1 px-1.5 py-0.5 rounded-full bg-primary/10 text-primary text-xs font-bold">3</span>
+</button>
+<button class="flex-shrink-0 px-4 py-2 rounded-full bg-white dark:bg-white/5 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-primary/50 dark:hover:border-primary/50 text-sm font-medium transition-colors">
+                            Leads
+                        </button>
+<button class="flex-shrink-0 px-4 py-2 rounded-full bg-white dark:bg-white/5 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-primary/50 dark:hover:border-primary/50 text-sm font-medium transition-colors">
+                            Account Updates
+                        </button>
+<button class="flex-shrink-0 px-4 py-2 rounded-full bg-white dark:bg-white/5 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-primary/50 dark:hover:border-primary/50 text-sm font-medium transition-colors">
+                            Promotions
+                        </button>
+</div>
+<!-- Notifications List -->
+<div class="flex flex-col gap-4">
+<!-- Item 1: Unread Lead -->
+<div class="group flex flex-col sm:flex-row gap-4 bg-white dark:bg-[#2a171c] p-5 rounded-xl border border-primary/20 shadow-sm relative overflow-hidden transition-all hover:shadow-md hover:border-primary/40">
+<div class="absolute top-5 right-5 h-2 w-2 rounded-full bg-primary"></div>
+<div class="flex-shrink-0">
+<div class="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">favorite</span>
+</div>
+</div>
+<div class="flex-1">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-1 mb-1">
+<h3 class="text-base font-bold text-slate-900 dark:text-white font-display">New Lead: Sarah &amp; Mike's Wedding</h3>
+<span class="text-xs text-slate-400 whitespace-nowrap">3h ago</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-300 mb-3 leading-relaxed">A couple is interested in your "Golden Hour" photography package for June 15th, 2024. They have a budget of $3,500.</p>
+<a class="inline-flex items-center text-sm font-semibold text-primary hover:text-primary/80 transition-colors" href="#">
+                                    View Details 
+                                    <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Item 2: Unread Message -->
+<div class="group flex flex-col sm:flex-row gap-4 bg-white dark:bg-[#2a171c] p-5 rounded-xl border border-primary/20 shadow-sm relative overflow-hidden transition-all hover:shadow-md hover:border-primary/40">
+<div class="absolute top-5 right-5 h-2 w-2 rounded-full bg-primary"></div>
+<div class="flex-shrink-0">
+<div class="h-12 w-12 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-400">
+<span class="material-symbols-outlined">chat_bubble</span>
+</div>
+</div>
+<div class="flex-1">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-1 mb-1">
+<h3 class="text-base font-bold text-slate-900 dark:text-white font-display">Message from The Venue at Hilltop</h3>
+<span class="text-xs text-slate-400 whitespace-nowrap">5h ago</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-300 mb-3 leading-relaxed">"Hi there! Just wanted to confirm if you're available for a site walkthrough next Tuesday regarding the Johnson wedding..."</p>
+<a class="inline-flex items-center text-sm font-semibold text-primary hover:text-primary/80 transition-colors" href="#">
+                                    Reply Now
+                                    <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Item 3: Account Update -->
+<div class="group flex flex-col sm:flex-row gap-4 bg-white dark:bg-[#2a171c] p-5 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm relative overflow-hidden transition-all hover:shadow-md">
+<div class="flex-shrink-0">
+<div class="h-12 w-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">settings</span>
+</div>
+</div>
+<div class="flex-1">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-1 mb-1">
+<h3 class="text-base font-bold text-slate-900 dark:text-white font-display">System Maintenance Scheduled</h3>
+<span class="text-xs text-slate-400 whitespace-nowrap">1d ago</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-300 mb-0 leading-relaxed">EventEase will be undergoing scheduled maintenance on Saturday from 2:00 AM to 4:00 AM EST. Services may be briefly unavailable.</p>
+</div>
+</div>
+<!-- Item 4: Promotion -->
+<div class="group flex flex-col sm:flex-row gap-4 bg-white dark:bg-[#2a171c] p-5 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm relative overflow-hidden transition-all hover:shadow-md">
+<div class="flex-shrink-0">
+<div class="h-12 w-12 rounded-full bg-emerald-50 dark:bg-emerald-900/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+<span class="material-symbols-outlined">stars</span>
+</div>
+</div>
+<div class="flex-1">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-1 mb-1">
+<h3 class="text-base font-bold text-slate-900 dark:text-white font-display">Boost Your Visibility!</h3>
+<span class="text-xs text-slate-400 whitespace-nowrap">2d ago</span>
+</div>
+<p class="text-sm text-slate-600 dark:text-slate-300 mb-3 leading-relaxed">Get 20% off Featured Listings this week only. Stand out to couples planning their big day.</p>
+<a class="inline-flex items-center text-sm font-semibold text-primary hover:text-primary/80 transition-colors" href="#">
+                                    Learn More
+                                    <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Item 5: Lead (Read) -->
+<div class="group flex flex-col sm:flex-row gap-4 bg-white dark:bg-[#2a171c] p-5 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm relative overflow-hidden transition-all hover:shadow-md opacity-80 hover:opacity-100">
+<div class="flex-shrink-0">
+<div class="h-12 w-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500">
+<span class="material-symbols-outlined">favorite_border</span>
+</div>
+</div>
+<div class="flex-1">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-1 mb-1">
+<h3 class="text-base font-bold text-slate-700 dark:text-slate-200 font-display">New Lead: Emily &amp; Davids's Wedding</h3>
+<span class="text-xs text-slate-400 whitespace-nowrap">3d ago</span>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-3 leading-relaxed">A couple is interested in your full-day videography package. Event date: August 12, 2024.</p>
+<a class="inline-flex items-center text-sm font-semibold text-slate-500 hover:text-primary transition-colors" href="#">
+                                    View Details 
+                                    <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Pagination / Load More -->
+<div class="mt-8 flex justify-center">
+<button class="px-6 py-2.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-white/5 text-slate-600 dark:text-slate-300 text-sm font-medium hover:bg-slate-50 dark:hover:bg-white/10 transition-colors">
+                            Load older notifications
+                        </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EventEase Vendor Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,200..800&amp;family=Noto+Sans:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e8305e",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#211115",
+                        "secondary-bg": "#f4f0f1", // From original component
+                        "text-main": "#181113",    // From original component
+                        "text-muted": "#88636c",   // From original component
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader", "serif"],
+                        "sans": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-slate-100 font-sans antialiased overflow-hidden">
+<div class="flex h-screen w-full bg-background-light dark:bg-background-dark">
+<!-- Sidebar -->
+<aside class="w-64 flex-shrink-0 flex flex-col bg-white dark:bg-slate-900 border-r border-secondary-bg dark:border-slate-800 h-full">
+<div class="p-6 flex flex-col gap-8 h-full">
+<!-- Brand -->
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-cover bg-center" data-alt="Elegant wedding rings detail" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA6K7NzNabs7M29kNtzAuQDZ1uk48egcfAPgbdK07CrSFt9BAr0oGhRSCa2ie2boIIE2E1iIg-gplwvwDJkttiSQf7dAxJ-xol-PDyrCVrFbS0ry-VrDYfOUqCNd0WXpZymy47CZQ7VkPnsRCLU92e5hAxq7Hdv8Kx3k_2BM92qU4JtF2RcJg-OHKQgJIuL20AVBxCjngYJwoQhtf_n9sdHjwaW1-OTObsVNgz9GG-xRlDCAAs0YeQ_nPTXbB9ZqyiknDuTGzj19KDN");'></div>
+<div>
+<h1 class="font-display text-xl font-medium text-text-main dark:text-white">EventEase</h1>
+<p class="text-sm text-text-muted dark:text-slate-400">Vendor Portal</p>
+</div>
+</div>
+<!-- Navigation -->
+<nav class="flex flex-col gap-2 flex-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-secondary-bg dark:bg-slate-800 text-primary dark:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined filled">dashboard</span>
+<span class="font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-text-main dark:text-slate-300 hover:bg-secondary-bg dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="font-medium">My Profile</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-text-main dark:text-slate-300 hover:bg-secondary-bg dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">list_alt</span>
+<span class="font-medium">My Listings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-text-main dark:text-slate-300 hover:bg-secondary-bg dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-medium">Leads</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-text-main dark:text-slate-300 hover:bg-secondary-bg dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-medium">Calendar</span>
+</a>
+</nav>
+<!-- Bottom Actions -->
+<div class="border-t border-secondary-bg dark:border-slate-800 pt-4 flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-text-main dark:text-slate-300 hover:bg-secondary-bg dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-text-muted dark:text-slate-500 hover:text-primary hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-medium">Log Out</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col h-full overflow-hidden relative">
+<!-- Header -->
+<header class="flex items-center justify-between px-8 py-5 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm sticky top-0 z-10 border-b border-secondary-bg dark:border-slate-800">
+<div class="flex items-center gap-4">
+<button class="lg:hidden text-text-main dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h2 class="font-display text-2xl font-bold text-text-main dark:text-white">Overview</h2>
+</div>
+<div class="flex items-center gap-6">
+<!-- Search -->
+<div class="hidden md:flex items-center bg-secondary-bg dark:bg-slate-800 rounded-xl px-4 py-2 w-64">
+<span class="material-symbols-outlined text-text-muted dark:text-slate-400">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full text-text-main dark:text-white placeholder-text-muted" placeholder="Search leads..." type="text"/>
+</div>
+<!-- Actions -->
+<div class="flex gap-3">
+<button class="p-2 rounded-xl hover:bg-secondary-bg dark:hover:bg-slate-800 transition-colors relative text-text-main dark:text-white">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full border-2 border-white dark:border-slate-900"></span>
+</button>
+<button class="p-2 rounded-xl hover:bg-secondary-bg dark:hover:bg-slate-800 transition-colors text-text-main dark:text-white">
+<span class="material-symbols-outlined">chat</span>
+</button>
+</div>
+<!-- User Avatar -->
+<div class="h-10 w-10 rounded-full bg-cover bg-center ring-2 ring-offset-2 ring-primary/20 dark:ring-offset-slate-900" data-alt="Profile picture of vendor" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBcu5JPg84N-2S5AS8MYQwxnaoHK3sDnHj_96W7lXkzqwQcm9V1buSV1_lNIElv25qmdDprNVpPL65TnuNIUEO1b2guKka6JjAy7zg7l5yDTmrvjgvTvYZvA9jYASp9v9I0PlcpWzqQEvy0J5lJGejo1qjPYd-cZ5WRzAEYHHeioTQKqDHyWEDTwFW5Vq89hyUSIuDDv3XR7AbVp8_g2S6YYhsi40BfDkX9zh3VfBSOVgFcbU8Y6Z7yVaplqSoayAe_VAYdF4Ins9Iz");'></div>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto p-8">
+<div class="max-w-7xl mx-auto flex flex-col gap-8">
+<!-- Welcome Section -->
+<div>
+<h1 class="font-display text-4xl font-medium text-text-main dark:text-white mb-2">Welcome back, Elegant Moments</h1>
+<p class="text-text-muted dark:text-slate-400">Here is what's happening with your wedding business today.</p>
+</div>
+<!-- Stats Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Stat Card 1 -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-secondary-bg dark:border-slate-800 hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-primary/10 rounded-xl text-primary">
+<span class="material-symbols-outlined">diversity_3</span>
+</div>
+<span class="flex items-center text-emerald-600 text-sm font-medium bg-emerald-50 dark:bg-emerald-900/20 px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-sm mr-1">trending_up</span> +12%
+                                </span>
+</div>
+<p class="text-text-muted dark:text-slate-400 text-sm font-medium">Total Leads</p>
+<h3 class="font-display text-3xl font-bold text-text-main dark:text-white mt-1">24</h3>
+</div>
+<!-- Stat Card 2 -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-secondary-bg dark:border-slate-800 hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-xl text-blue-600">
+<span class="material-symbols-outlined">storefront</span>
+</div>
+<span class="flex items-center text-emerald-600 text-sm font-medium bg-emerald-50 dark:bg-emerald-900/20 px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-sm mr-1">add</span> 1
+                                </span>
+</div>
+<p class="text-text-muted dark:text-slate-400 text-sm font-medium">Active Listings</p>
+<h3 class="font-display text-3xl font-bold text-text-main dark:text-white mt-1">3</h3>
+</div>
+<!-- Stat Card 3 -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-secondary-bg dark:border-slate-800 hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-purple-50 dark:bg-purple-900/20 rounded-xl text-purple-600">
+<span class="material-symbols-outlined">visibility</span>
+</div>
+<span class="flex items-center text-emerald-600 text-sm font-medium bg-emerald-50 dark:bg-emerald-900/20 px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-sm mr-1">trending_up</span> +8%
+                                </span>
+</div>
+<p class="text-text-muted dark:text-slate-400 text-sm font-medium">Profile Views</p>
+<h3 class="font-display text-3xl font-bold text-text-main dark:text-white mt-1">1,204</h3>
+</div>
+<!-- Stat Card 4 -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-secondary-bg dark:border-slate-800 hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-amber-50 dark:bg-amber-900/20 rounded-xl text-amber-600">
+<span class="material-symbols-outlined">stars</span>
+</div>
+<span class="flex items-center text-text-muted text-sm font-medium bg-secondary-bg dark:bg-slate-800 px-2 py-1 rounded-lg">
+                                    Active
+                                </span>
+</div>
+<p class="text-text-muted dark:text-slate-400 text-sm font-medium">Promo Status</p>
+<h3 class="font-display text-3xl font-bold text-text-main dark:text-white mt-1">Gold</h3>
+</div>
+</div>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
+<!-- Recent Leads (Span 2) -->
+<div class="xl:col-span-2 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-secondary-bg dark:border-slate-800 flex flex-col">
+<div class="p-6 border-b border-secondary-bg dark:border-slate-800 flex justify-between items-center">
+<h3 class="font-display text-lg font-bold text-text-main dark:text-white">Recent Leads</h3>
+<a class="text-sm font-medium text-primary hover:text-primary/80" href="#">View All</a>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-secondary-bg dark:bg-slate-800/50 text-text-muted dark:text-slate-400 text-xs uppercase tracking-wider font-semibold">
+<tr>
+<th class="px-6 py-4 rounded-tl-lg">Couple Name</th>
+<th class="px-6 py-4">Event Date</th>
+<th class="px-6 py-4">Status</th>
+<th class="px-6 py-4 rounded-tr-lg text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-secondary-bg dark:divide-slate-800">
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-xs font-bold text-text-muted dark:text-slate-400">SJ</div>
+<div>
+<p class="font-medium text-text-main dark:text-white text-sm">Sarah &amp; John</p>
+<p class="text-xs text-text-muted">Wedding Ceremony</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-text-main dark:text-slate-300">Oct 12, 2024</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">
+                                                    New Inquiry
+                                                </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-text-muted hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded-full bg-rose-100 dark:bg-rose-900/30 flex items-center justify-center text-xs font-bold text-primary">MK</div>
+<div>
+<p class="font-medium text-text-main dark:text-white text-sm">Mike &amp; Kate</p>
+<p class="text-xs text-text-muted">Reception Only</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-text-main dark:text-slate-300">Sep 05, 2024</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-50 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300">
+                                                    Pending
+                                                </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-text-muted hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-8 w-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-xs font-bold text-text-muted dark:text-slate-400">EL</div>
+<div>
+<p class="font-medium text-text-main dark:text-white text-sm">Emily &amp; Liam</p>
+<p class="text-xs text-text-muted">Full Planning</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-text-main dark:text-slate-300">Dec 20, 2024</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300">
+                                                    Replied
+                                                </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-text-muted hover:text-primary dark:text-slate-400 dark:hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Right Column Stack -->
+<div class="flex flex-col gap-6">
+<!-- Boost Visibility CTA -->
+<div class="bg-primary/5 dark:bg-primary/10 rounded-2xl p-6 border border-primary/20 relative overflow-hidden group">
+<div class="absolute -right-6 -top-6 w-32 h-32 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-all duration-500"></div>
+<div class="relative z-10 flex flex-col h-full justify-between gap-4">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="bg-white dark:bg-slate-800 text-text-main dark:text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded shadow-sm">Recommended</span>
+</div>
+<h3 class="font-display text-2xl font-bold text-text-main dark:text-white leading-tight mb-2">Boost Your<br/>Visibility</h3>
+<p class="text-sm text-text-muted dark:text-slate-300 mb-4">Get featured on the homepage and appear in top search results.</p>
+<div class="flex items-baseline gap-1 text-primary">
+<span class="text-3xl font-bold">$49</span>
+<span class="text-sm font-medium text-text-muted">/month</span>
+</div>
+</div>
+<ul class="space-y-2 mb-2">
+<li class="flex items-center gap-2 text-sm text-text-main dark:text-slate-300">
+<span class="material-symbols-outlined text-emerald-500 text-[18px]">check_circle</span>
+<span>Homepage Feature</span>
+</li>
+<li class="flex items-center gap-2 text-sm text-text-main dark:text-slate-300">
+<span class="material-symbols-outlined text-emerald-500 text-[18px]">check_circle</span>
+<span>Priority Search</span>
+</li>
+</ul>
+<button class="w-full py-3 bg-primary hover:bg-rose-600 text-white font-medium rounded-xl shadow-lg shadow-primary/20 transition-all duration-200 transform hover:scale-[1.02] flex items-center justify-center gap-2">
+                                        Upgrade Now
+                                        <span class="material-symbols-outlined text-[18px]">rocket_launch</span>
+</button>
+</div>
+</div>
+<!-- Profile Views Chart Placeholder -->
+<div class="bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-secondary-bg dark:border-slate-800 p-6 flex-1 min-h-[240px]">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-display text-lg font-bold text-text-main dark:text-white">Profile Views</h3>
+<select class="bg-secondary-bg dark:bg-slate-800 border-none rounded-lg text-xs font-medium text-text-main dark:text-white py-1 px-3 cursor-pointer focus:ring-0">
+<option>This Week</option>
+<option>This Month</option>
+</select>
+</div>
+<div class="relative h-40 w-full flex items-end justify-between gap-2 px-2">
+<!-- Decorative bars to simulate chart -->
+<div class="w-full bg-primary/20 dark:bg-primary/30 rounded-t-lg h-[40%] hover:bg-primary/40 transition-colors relative group">
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-text-main text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">120</div>
+</div>
+<div class="w-full bg-primary/20 dark:bg-primary/30 rounded-t-lg h-[65%] hover:bg-primary/40 transition-colors relative group">
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-text-main text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">185</div>
+</div>
+<div class="w-full bg-primary/20 dark:bg-primary/30 rounded-t-lg h-[45%] hover:bg-primary/40 transition-colors relative group">
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-text-main text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">140</div>
+</div>
+<div class="w-full bg-primary/20 dark:bg-primary/30 rounded-t-lg h-[80%] hover:bg-primary/40 transition-colors relative group">
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-text-main text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">220</div>
+</div>
+<div class="w-full bg-primary/20 dark:bg-primary/30 rounded-t-lg h-[55%] hover:bg-primary/40 transition-colors relative group">
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-text-main text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">160</div>
+</div>
+<div class="w-full bg-primary dark:bg-primary rounded-t-lg h-[90%] shadow-lg shadow-primary/30 relative group">
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-text-main text-white text-xs py-1 px-2 rounded opacity-100">254</div>
+</div>
+<div class="w-full bg-primary/20 dark:bg-primary/30 rounded-t-lg h-[70%] hover:bg-primary/40 transition-colors relative group">
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-text-main text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">190</div>
+</div>
+</div>
+<div class="flex justify-between mt-2 text-xs text-text-muted dark:text-slate-500 font-medium px-1">
+<span>Mon</span>
+<span>Tue</span>
+<span>Wed</span>
+<span>Thu</span>
+<span>Fri</span>
+<span>Sat</span>
+<span>Sun</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

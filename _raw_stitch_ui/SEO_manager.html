@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EventEase Admin SEO Manager Overview</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600;700;800&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e8305e",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#211115",
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader", "serif"],
+                        "sans": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans antialiased overflow-x-hidden">
+<div class="relative flex h-screen w-full flex-row overflow-hidden bg-background-light dark:bg-background-dark">
+<!-- Sidebar -->
+<div class="hidden w-64 flex-col justify-between border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-[#1a0f12] p-4 lg:flex overflow-y-auto">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 px-2">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Abstract colorful gradient pattern" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB5t1nMMkNiBFgDM8Ex08h6HmbF7hTvSs0wsW1ban4PPKJmrMHvQVYU94zEIn6I52fVSj1BZvylzVcnEBaQxluCAIfpugulAltPes3n1qokdspy5ffxdgqLO7eNUBAn8jKEMmXnMpu0vAWGsGJUBOcxLhw4kfUdyHp7dYgCxa5lLodCpBXNdqxEkN3EK7T8OW75642VbaYsNl7joReexVgGdEpKM8Op24PpxQKLqa7P1JgIWIk91vKSLUq6NeOVRW62CyBqivyncB1n");'></div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-white text-base font-bold leading-normal font-display">EventEase Admin</h1>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">Super Admin</p>
+</div>
+</div>
+<div class="flex flex-col gap-2 mt-4">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-500">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-500">storefront</span>
+<p class="text-sm font-medium leading-normal">Vendors</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-500">calendar_month</span>
+<p class="text-sm font-medium leading-normal">Bookings</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary dark:text-primary" href="#">
+<span class="material-symbols-outlined text-primary">search</span>
+<p class="text-sm font-bold leading-normal">SEO Manager</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-500">settings</span>
+<p class="text-sm font-medium leading-normal">Settings</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-slate-500">help</span>
+<p class="text-sm font-medium leading-normal">Support</p>
+</a>
+</div>
+</div>
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-bold leading-normal transition-colors">
+<span class="truncate">Log Out</span>
+</button>
+</div>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col h-full overflow-y-auto bg-background-light dark:bg-background-dark">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-6 lg:px-12 flex flex-1 justify-center py-8">
+<div class="layout-content-container flex flex-col w-full max-w-[1200px] flex-1 gap-6">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+<div class="flex flex-col gap-1">
+<h1 class="text-slate-900 dark:text-white text-3xl md:text-4xl font-black leading-tight tracking-tight font-display">SEO Manager</h1>
+<p class="text-slate-500 dark:text-slate-400 text-base font-normal leading-normal">Manage search engine visibility, meta tags, and indexing status.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center gap-2 h-10 px-4 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-sm font-bold hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+                                    Rebuild Sitemap
+                                </button>
+<button class="flex items-center justify-center gap-2 h-10 px-6 rounded-xl bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined text-[18px]">save</span>
+                                    Save Changes
+                                </button>
+</div>
+</div>
+<!-- KPI Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+<!-- KPI 1 -->
+<div class="flex flex-col gap-2 rounded-xl p-5 bg-white dark:bg-[#1a0f12] border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[20px]">description</span>
+<p class="text-xs font-bold uppercase tracking-wider">Indexed Pages</p>
+</div>
+<p class="text-slate-900 dark:text-white text-2xl font-bold font-display">1,240</p>
+<div class="flex items-center gap-1 text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/20 w-fit px-2 py-0.5 rounded-md">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span class="text-xs font-bold">+5.2%</span>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="flex flex-col gap-2 rounded-xl p-5 bg-white dark:bg-[#1a0f12] border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[20px]">rss_feed</span>
+<p class="text-xs font-bold uppercase tracking-wider">Blog Posts</p>
+</div>
+<p class="text-slate-900 dark:text-white text-2xl font-bold font-display">86</p>
+<div class="flex items-center gap-1 text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/20 w-fit px-2 py-0.5 rounded-md">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span class="text-xs font-bold">2 New</span>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="flex flex-col gap-2 rounded-xl p-5 bg-white dark:bg-[#1a0f12] border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[20px]">store</span>
+<p class="text-xs font-bold uppercase tracking-wider">Vendor Pages</p>
+</div>
+<p class="text-slate-900 dark:text-white text-2xl font-bold font-display">312</p>
+<div class="flex items-center gap-1 text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/20 w-fit px-2 py-0.5 rounded-md">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span class="text-xs font-bold">+14</span>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="flex flex-col gap-2 rounded-xl p-5 bg-white dark:bg-[#1a0f12] border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[20px]">map</span>
+<p class="text-xs font-bold uppercase tracking-wider">Sitemap Status</p>
+</div>
+<div class="flex items-center justify-between mt-1">
+<p class="text-slate-900 dark:text-white text-lg font-bold">Active</p>
+<span class="flex h-3 w-3 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+</span>
+</div>
+<p class="text-slate-400 text-xs">Last updated 2h ago</p>
+</div>
+<!-- KPI 5 -->
+<div class="flex flex-col gap-2 rounded-xl p-5 bg-white dark:bg-[#1a0f12] border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-[20px]">bar_chart</span>
+<p class="text-xs font-bold uppercase tracking-wider">Avg Meta Score</p>
+</div>
+<div class="flex items-end gap-2">
+<p class="text-slate-900 dark:text-white text-2xl font-bold font-display">92</p>
+<p class="text-slate-400 text-sm mb-1">/ 100</p>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-1.5 mt-1 overflow-hidden">
+<div class="bg-blue-500 h-1.5 rounded-full" style="width: 92%"></div>
+</div>
+</div>
+</div>
+<!-- Main Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Left Column (2/3 width) -->
+<div class="lg:col-span-2 flex flex-col gap-6">
+<!-- Global SEO Settings -->
+<div class="bg-white dark:bg-[#1a0f12] rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+<div class="p-6 border-b border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<div class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">settings_suggest</span>
+</div>
+<div>
+<h3 class="text-slate-900 dark:text-white text-lg font-bold font-display">Global SEO Settings</h3>
+<p class="text-slate-500 text-sm">Configure default meta tags for dynamic pages.</p>
+</div>
+</div>
+</div>
+<div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-slate-700 dark:text-slate-300 text-sm font-bold">Default Title Suffix</label>
+<input class="form-input w-full rounded-lg border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white text-sm focus:border-primary focus:ring-primary h-10 px-3" type="text" value="| EventEase Wedding Marketplace"/>
+<p class="text-xs text-slate-400">Appended to all page titles automatically.</p>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-slate-700 dark:text-slate-300 text-sm font-bold">Robots.txt Rule Set</label>
+<select class="form-select w-full rounded-lg border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white text-sm focus:border-primary focus:ring-primary h-10 px-3">
+<option>Standard (Allow All)</option>
+<option>Strict (Disallow Admin)</option>
+<option>Custom Configuration</option>
+</select>
+<p class="text-xs text-slate-400">Controls crawler access permissions.</p>
+</div>
+<div class="flex flex-col gap-2 md:col-span-2">
+<label class="text-slate-700 dark:text-slate-300 text-sm font-bold">Default Meta Description Template</label>
+<textarea class="form-textarea w-full rounded-lg border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white text-sm focus:border-primary focus:ring-primary p-3" rows="3">Find the best {category} in {location} for your special day. Compare prices, read reviews, and book top-rated wedding vendors on EventEase.</textarea>
+<div class="flex gap-2 mt-1">
+<span class="inline-flex items-center rounded-md bg-slate-100 dark:bg-slate-800 px-2 py-1 text-xs font-medium text-slate-600 dark:text-slate-400 ring-1 ring-inset ring-slate-500/10 cursor-pointer hover:bg-slate-200 dark:hover:bg-slate-700">{category}</span>
+<span class="inline-flex items-center rounded-md bg-slate-100 dark:bg-slate-800 px-2 py-1 text-xs font-medium text-slate-600 dark:text-slate-400 ring-1 ring-inset ring-slate-500/10 cursor-pointer hover:bg-slate-200 dark:hover:bg-slate-700">{location}</span>
+<span class="inline-flex items-center rounded-md bg-slate-100 dark:bg-slate-800 px-2 py-1 text-xs font-medium text-slate-600 dark:text-slate-400 ring-1 ring-inset ring-slate-500/10 cursor-pointer hover:bg-slate-200 dark:hover:bg-slate-700">{count}</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Homepage SEO Preview -->
+<div class="bg-white dark:bg-[#1a0f12] rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+<div class="p-6 border-b border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<div class="bg-blue-100 dark:bg-blue-900/30 p-2 rounded-lg text-blue-600 dark:text-blue-400">
+<span class="material-symbols-outlined">preview</span>
+</div>
+<div>
+<h3 class="text-slate-900 dark:text-white text-lg font-bold font-display">Search Preview</h3>
+<p class="text-slate-500 text-sm">How your homepage appears on Google Search.</p>
+</div>
+</div>
+</div>
+<div class="p-6">
+<div class="bg-slate-50 dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+<div class="max-w-[600px] font-arial">
+<div class="flex items-center gap-3 mb-1">
+<div class="w-7 h-7 bg-slate-200 rounded-full flex items-center justify-center text-xs text-slate-500">EE</div>
+<div class="flex flex-col">
+<span class="text-sm text-[#202124] dark:text-[#dadce0]">EventEase</span>
+<span class="text-xs text-[#5f6368] dark:text-[#9aa0a6]">https://www.eventease.com</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 text-[18px]">more_vert</span>
+</div>
+<h3 class="text-xl text-[#1a0dab] dark:text-[#8ab4f8] hover:underline cursor-pointer mb-1 leading-snug">EventEase: The #1 Wedding Vendor Marketplace</h3>
+<p class="text-sm text-[#4d5156] dark:text-[#bdc1c6] leading-normal">
+                                                    Plan your dream wedding with ease. Discover thousands of top-rated venues, photographers, florists, and more. Compare quotes and book instantly.
+                                                </p>
+</div>
+</div>
+<div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col gap-2">
+<label class="text-slate-700 dark:text-slate-300 text-sm font-bold">Meta Title</label>
+<input class="form-input w-full rounded-lg border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-sm focus:border-primary focus:ring-primary h-10 px-3" type="text" value="EventEase: The #1 Wedding Vendor Marketplace"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-slate-700 dark:text-slate-300 text-sm font-bold">Meta Description</label>
+<input class="form-input w-full rounded-lg border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-sm focus:border-primary focus:ring-primary h-10 px-3" type="text" value="Plan your dream wedding with ease. Discover thousands..."/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column (1/3 width) -->
+<div class="flex flex-col gap-6">
+<!-- Search Index Management -->
+<div class="bg-white dark:bg-[#1a0f12] rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden h-fit">
+<div class="p-6 border-b border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<div class="bg-amber-100 dark:bg-amber-900/30 p-2 rounded-lg text-amber-600 dark:text-amber-400">
+<span class="material-symbols-outlined">dataset</span>
+</div>
+<div>
+<h3 class="text-slate-900 dark:text-white text-lg font-bold font-display">Index Management</h3>
+<p class="text-slate-500 text-sm">Control internal indexing.</p>
+</div>
+</div>
+</div>
+<div class="p-6 flex flex-col gap-6">
+<!-- Health Indicator -->
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center">
+<span class="text-sm font-bold text-slate-700 dark:text-slate-300">Index Health</span>
+<span class="text-xs font-bold text-emerald-600 bg-emerald-50 dark:bg-emerald-900/20 px-2 py-1 rounded-md">Healthy</span>
+</div>
+<div class="relative h-4 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="absolute top-0 left-0 h-full bg-gradient-to-r from-emerald-500 to-emerald-400 w-[95%]"></div>
+</div>
+<p class="text-xs text-slate-500">95% of content is indexed and reachable.</p>
+</div>
+<hr class="border-slate-100 dark:border-slate-800"/>
+<div class="flex flex-col gap-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-slate-400 text-[20px] mt-0.5">history</span>
+<div>
+<p class="text-sm font-medium text-slate-900 dark:text-slate-200">Last Full Index</p>
+<p class="text-xs text-slate-500">Today, 4:30 AM</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-slate-400 text-[20px] mt-0.5">schedule</span>
+<div>
+<p class="text-sm font-medium text-slate-900 dark:text-slate-200">Next Scheduled</p>
+<p class="text-xs text-slate-500">Tomorrow, 4:00 AM</p>
+</div>
+</div>
+</div>
+<button class="w-full py-3 rounded-xl border-2 border-slate-200 dark:border-slate-700 hover:border-primary/50 text-slate-700 dark:text-slate-300 font-bold text-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition-all flex items-center justify-center gap-2 group">
+<span class="material-symbols-outlined group-hover:rotate-180 transition-transform">refresh</span>
+                                            Re-index All Content
+                                        </button>
+</div>
+</div>
+<!-- Recent Issues -->
+<div class="bg-white dark:bg-[#1a0f12] rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden h-fit">
+<div class="p-6 border-b border-slate-100 dark:border-slate-800">
+<div class="flex items-center justify-between">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold font-display">Crawl Errors</h3>
+<span class="bg-primary/10 text-primary text-xs font-bold px-2 py-1 rounded-md">3 Issues</span>
+</div>
+</div>
+<div class="p-2">
+<div class="flex items-center gap-3 p-3 hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg transition-colors cursor-pointer border-b border-slate-50 dark:border-slate-800/50">
+<div class="text-red-500 bg-red-50 dark:bg-red-900/20 p-1.5 rounded-lg">
+<span class="material-symbols-outlined text-[18px]">broken_image</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold text-slate-900 dark:text-white truncate">404 on Vendor/293</p>
+<p class="text-xs text-slate-500">Detected 2h ago</p>
+</div>
+<span class="material-symbols-outlined text-slate-300 text-[18px]">chevron_right</span>
+</div>
+<div class="flex items-center gap-3 p-3 hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg transition-colors cursor-pointer border-b border-slate-50 dark:border-slate-800/50">
+<div class="text-amber-500 bg-amber-50 dark:bg-amber-900/20 p-1.5 rounded-lg">
+<span class="material-symbols-outlined text-[18px]">link_off</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold text-slate-900 dark:text-white truncate">Redirect Loop</p>
+<p class="text-xs text-slate-500">Detected 5h ago</p>
+</div>
+<span class="material-symbols-outlined text-slate-300 text-[18px]">chevron_right</span>
+</div>
+<div class="flex items-center gap-3 p-3 hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg transition-colors cursor-pointer">
+<div class="text-slate-500 bg-slate-100 dark:bg-slate-800 p-1.5 rounded-lg">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold text-slate-900 dark:text-white truncate">Missing Alt Tags</p>
+<p class="text-xs text-slate-500">12 images affected</p>
+</div>
+<span class="material-symbols-outlined text-slate-300 text-[18px]">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

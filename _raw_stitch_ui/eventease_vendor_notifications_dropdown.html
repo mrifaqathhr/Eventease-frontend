@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EventEase Vendor Notifications</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght,ITAL@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e8305e",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#211115",
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader", "serif"],
+                        "sans": ["Inter", "sans-serif"] // Adding a sans-serif for UI elements if needed, though instructions said use display font for all
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen text-[#181113] dark:text-[#f4f0f1]">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Header -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#f4f0f1] dark:border-[#3a2e32] bg-white dark:bg-[#181113] px-10 py-3 z-50 relative">
+<div class="flex items-center gap-4">
+<div class="size-8 text-primary">
+<span class="material-symbols-outlined text-4xl">favorite</span>
+</div>
+<h2 class="text-[#181113] dark:text-white text-2xl font-bold leading-tight tracking-[-0.015em]">EventEase</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="hidden md:flex items-center gap-9">
+<a class="text-[#181113] dark:text-[#e0d9db] text-base font-medium leading-normal hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-[#181113] dark:text-[#e0d9db] text-base font-medium leading-normal hover:text-primary transition-colors" href="#">Leads</a>
+<a class="text-[#181113] dark:text-[#e0d9db] text-base font-medium leading-normal hover:text-primary transition-colors" href="#">Calendar</a>
+<a class="text-[#181113] dark:text-[#e0d9db] text-base font-medium leading-normal hover:text-primary transition-colors" href="#">Profile</a>
+</div>
+<div class="flex gap-4 items-center">
+<!-- Notification Button with Dropdown Trigger styling -->
+<div class="relative group">
+<button class="flex items-center justify-center overflow-hidden rounded-xl h-10 w-10 bg-primary/10 text-primary hover:bg-primary/20 transition-colors relative">
+<span class="material-symbols-outlined text-2xl">notifications</span>
+<span class="absolute top-2 right-2 size-2 rounded-full bg-primary border-2 border-white dark:border-[#181113]"></span>
+</button>
+<!-- Dropdown Menu -->
+<div class="absolute right-0 top-full mt-3 w-[400px] bg-white dark:bg-[#181113] rounded-xl shadow-[0_4px_24px_rgba(0,0,0,0.12)] border border-[#f4f0f1] dark:border-[#3a2e32] overflow-hidden z-50">
+<!-- Dropdown Header -->
+<div class="flex items-center justify-between p-4 border-b border-[#f4f0f1] dark:border-[#3a2e32]">
+<h3 class="font-bold text-lg text-[#181113] dark:text-white">Notifications</h3>
+<button class="text-sm text-primary font-medium hover:text-primary/80 transition-colors">Mark all as read</button>
+</div>
+<!-- Notification List -->
+<div class="max-h-[480px] overflow-y-auto">
+<!-- Item 1: New Lead -->
+<div class="flex gap-4 p-4 border-b border-[#f4f0f1] dark:border-[#3a2e32] hover:bg-[#fcfafa] dark:hover:bg-[#2a1e21] transition-colors cursor-pointer relative">
+<div class="shrink-0">
+<div class="flex items-center justify-center rounded-full bg-[#fceef2] dark:bg-[#3d1822] size-10 text-primary">
+<span class="material-symbols-outlined text-xl">mail</span>
+</div>
+</div>
+<div class="flex flex-1 flex-col gap-1">
+<div class="flex justify-between items-start">
+<p class="text-[#181113] dark:text-white text-base font-semibold leading-tight">New Lead: Sarah &amp; Mike</p>
+<span class="size-2 rounded-full bg-primary mt-1.5 shrink-0"></span>
+</div>
+<p class="text-[#88636c] dark:text-[#bdaeb2] text-sm leading-normal line-clamp-2">You have a new inquiry for a June wedding package at The Grand Hall.</p>
+<p class="text-[#88636c] dark:text-[#88636c] text-xs font-medium mt-1">2h ago</p>
+</div>
+</div>
+<!-- Item 2: Profile Approved -->
+<div class="flex gap-4 p-4 border-b border-[#f4f0f1] dark:border-[#3a2e32] hover:bg-[#fcfafa] dark:hover:bg-[#2a1e21] transition-colors cursor-pointer">
+<div class="shrink-0">
+<div class="flex items-center justify-center rounded-full bg-[#e8f7f0] dark:bg-[#0e2e21] size-10 text-[#078859]">
+<span class="material-symbols-outlined text-xl">check_circle</span>
+</div>
+</div>
+<div class="flex flex-1 flex-col gap-1">
+<div class="flex justify-between items-start">
+<p class="text-[#181113] dark:text-white text-base font-semibold leading-tight">Profile Approved</p>
+<span class="size-2 rounded-full bg-primary mt-1.5 shrink-0"></span>
+</div>
+<p class="text-[#88636c] dark:text-[#bdaeb2] text-sm leading-normal">Your vendor profile is now live and visible to couples in the directory.</p>
+<p class="text-[#88636c] dark:text-[#88636c] text-xs font-medium mt-1">5h ago</p>
+</div>
+</div>
+<!-- Item 3: Promotion Active -->
+<div class="flex gap-4 p-4 border-b border-[#f4f0f1] dark:border-[#3a2e32] hover:bg-[#fcfafa] dark:hover:bg-[#2a1e21] transition-colors cursor-pointer">
+<div class="shrink-0">
+<div class="flex items-center justify-center rounded-full bg-[#fff8e1] dark:bg-[#3d3110] size-10 text-[#f59e0b]">
+<span class="material-symbols-outlined text-xl">star</span>
+</div>
+</div>
+<div class="flex flex-1 flex-col gap-1">
+<div class="flex justify-between items-start">
+<p class="text-[#181113] dark:text-white text-base font-semibold leading-tight">Promotion Active</p>
+<span class="size-2 rounded-full bg-primary mt-1.5 shrink-0"></span>
+</div>
+<p class="text-[#88636c] dark:text-[#bdaeb2] text-sm leading-normal">Your 'Spring Booking Special' is now active and highlighted.</p>
+<p class="text-[#88636c] dark:text-[#88636c] text-xs font-medium mt-1">1d ago</p>
+</div>
+</div>
+<!-- Item 4: Review Received (Read) -->
+<div class="flex gap-4 p-4 hover:bg-[#fcfafa] dark:hover:bg-[#2a1e21] transition-colors cursor-pointer opacity-70">
+<div class="shrink-0">
+<div class="flex items-center justify-center rounded-full bg-[#f0f4ff] dark:bg-[#1a233b] size-10 text-[#3b82f6]">
+<span class="material-symbols-outlined text-xl">rate_review</span>
+</div>
+</div>
+<div class="flex flex-1 flex-col gap-1">
+<div class="flex justify-between items-start">
+<p class="text-[#181113] dark:text-white text-base font-semibold leading-tight">New Review Received</p>
+</div>
+<p class="text-[#88636c] dark:text-[#bdaeb2] text-sm leading-normal">Jessica left a 5-star review: "Absolutely amazing service!"</p>
+<p class="text-[#88636c] dark:text-[#88636c] text-xs font-medium mt-1">2d ago</p>
+</div>
+</div>
+</div>
+<!-- Dropdown Footer -->
+<div class="p-3 bg-[#f8f6f6] dark:bg-[#211115] border-t border-[#f4f0f1] dark:border-[#3a2e32] text-center">
+<a class="text-sm font-bold text-primary hover:text-[#d42a55] transition-colors block w-full py-1" href="#">View All Notifications</a>
+</div>
+</div>
+</div>
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 w-10 bg-[#f4f0f1] dark:bg-[#3a2e32] text-[#181113] dark:text-white hover:bg-[#e8e4e5] dark:hover:bg-[#4a3e42] transition-colors">
+<span class="material-symbols-outlined text-2xl">account_circle</span>
+</button>
+<div class="hidden md:block bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border border-[#f4f0f1] dark:border-[#3a2e32]" data-alt="Profile picture of a smiling woman" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDxpj_eajV3tNQ1E_miv4KIUCb4jeuIm_PuxhqMO1keTkVOGlvgdeGC2UWjRnRozjK6W7F1BNizG7gOLBXt9TCO7Cy5w8B2I9m04O1TYGcUYjQa-UggUfh61Z0pxLFyjb91ki7q1YXr1u5jGD-hCSmRwnRV2rBY_5IJKZjyyUiaClJC8pM2mcLuIugKyWzl7brqeHDWgh9FzcAgRgAPIzFJdgXk3kRbjm93QkBM1KugNeqTiN8_-i_hX9Ve0RXWH9As5F0sJlHRlFZU");'></div>
+</div>
+</div>
+</header>
+<!-- Main Content Area (Blurred Background Context) -->
+<main class="flex-1 px-40 py-8 relative">
+<!-- Dimmed Overlay Effect -->
+<div class="absolute inset-0 bg-black/5 z-40 pointer-events-none"></div>
+<div class="layout-content-container flex flex-col max-w-[960px] mx-auto gap-8">
+<!-- Welcome Section -->
+<div class="flex flex-col gap-2">
+<h1 class="text-4xl font-bold text-[#181113] dark:text-white">Welcome back, Emily!</h1>
+<p class="text-[#88636c] dark:text-[#bdaeb2] text-lg">Here's what's happening with your wedding business today.</p>
+</div>
+<!-- Dashboard Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Stat Card 1 -->
+<div class="bg-white dark:bg-[#181113] rounded-xl p-6 shadow-sm border border-[#f4f0f1] dark:border-[#3a2e32] flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<span class="text-[#88636c] dark:text-[#bdaeb2] font-medium">Total Leads</span>
+<span class="material-symbols-outlined text-primary">groups</span>
+</div>
+<p class="text-3xl font-bold text-[#181113] dark:text-white">24</p>
+<div class="text-sm text-[#078859] flex items-center gap-1">
+<span class="material-symbols-outlined text-base">trending_up</span>
+<span>+12% this week</span>
+</div>
+</div>
+<!-- Stat Card 2 -->
+<div class="bg-white dark:bg-[#181113] rounded-xl p-6 shadow-sm border border-[#f4f0f1] dark:border-[#3a2e32] flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<span class="text-[#88636c] dark:text-[#bdaeb2] font-medium">Upcoming Events</span>
+<span class="material-symbols-outlined text-primary">event</span>
+</div>
+<p class="text-3xl font-bold text-[#181113] dark:text-white">3</p>
+<div class="text-sm text-[#88636c] dark:text-[#bdaeb2]">Next: June 12th</div>
+</div>
+<!-- Stat Card 3 -->
+<div class="bg-white dark:bg-[#181113] rounded-xl p-6 shadow-sm border border-[#f4f0f1] dark:border-[#3a2e32] flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<span class="text-[#88636c] dark:text-[#bdaeb2] font-medium">Avg. Rating</span>
+<span class="material-symbols-outlined text-primary">star</span>
+</div>
+<p class="text-3xl font-bold text-[#181113] dark:text-white">4.9</p>
+<div class="text-sm text-[#88636c] dark:text-[#bdaeb2]">Based on 42 reviews</div>
+</div>
+</div>
+<!-- Recent Activity Table Placeholder -->
+<div class="bg-white dark:bg-[#181113] rounded-xl shadow-sm border border-[#f4f0f1] dark:border-[#3a2e32] overflow-hidden">
+<div class="p-6 border-b border-[#f4f0f1] dark:border-[#3a2e32]">
+<h3 class="text-xl font-bold text-[#181113] dark:text-white">Recent Inquiries</h3>
+</div>
+<div class="p-6">
+<div class="flex flex-col gap-4">
+<!-- List Item Mockup -->
+<div class="flex items-center justify-between py-2">
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-full bg-[#f4f0f1] dark:bg-[#3a2e32] flex items-center justify-center text-[#88636c]">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div>
+<p class="font-semibold text-[#181113] dark:text-white">Sarah Jenkins</p>
+<p class="text-sm text-[#88636c]">Wedding Photography • Oct 14, 2024</p>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">New</span>
+</div>
+<div class="flex items-center justify-between py-2 border-t border-[#f4f0f1] dark:border-[#3a2e32]">
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-full bg-[#f4f0f1] dark:bg-[#3a2e32] flex items-center justify-center text-[#88636c]">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div>
+<p class="font-semibold text-[#181113] dark:text-white">Michael &amp; Tom</p>
+<p class="text-sm text-[#88636c]">Full Planning • Aug 22, 2025</p>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-[#fff8e1] dark:bg-[#3d3110] text-[#f59e0b] text-sm font-medium">Replied</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

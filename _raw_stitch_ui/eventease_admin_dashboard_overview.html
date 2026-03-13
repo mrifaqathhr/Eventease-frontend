@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EventEase Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e8305e",
+                        "primary-dark": "#c0234a",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#211115",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d1b20",
+                        "text-main": "#181113",
+                        "text-muted": "#88636c",
+                    },
+                    fontFamily: {
+                        "display": ['"Noto Sans"', "sans-serif"],
+                        "sans": ['"Noto Sans"', "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Noto Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light text-text-main antialiased font-display min-h-screen flex overflow-hidden">
+<!-- Sidebar -->
+<aside class="w-64 bg-surface-light border-r border-gray-100 flex-shrink-0 hidden lg:flex flex-col h-screen sticky top-0">
+<div class="p-6 flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-gradient-to-br from-primary to-rose-400 flex items-center justify-center text-white shadow-md shadow-primary/20">
+<span class="material-symbols-outlined text-[24px]">dataset</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-text-main text-lg font-bold leading-tight">EventEase</h1>
+<p class="text-text-muted text-xs font-medium">Admin Panel</p>
+</div>
+</div>
+<nav class="flex-1 overflow-y-auto px-4 py-2 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-primary/10 text-primary group transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">dashboard</span>
+<span class="text-sm font-semibold">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-text-muted hover:bg-gray-50 hover:text-text-main group transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">storefront</span>
+<span class="text-sm font-medium">Vendor Approvals</span>
+<span class="ml-auto bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded-full">12</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-text-muted hover:bg-gray-50 hover:text-text-main group transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">campaign</span>
+<span class="text-sm font-medium">Promotion Requests</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-text-muted hover:bg-gray-50 hover:text-text-main group transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">people</span>
+<span class="text-sm font-medium">User Management</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-text-muted hover:bg-gray-50 hover:text-text-main group transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">bar_chart</span>
+<span class="text-sm font-medium">Reports</span>
+</a>
+<div class="pt-4 mt-4 border-t border-gray-100">
+<p class="px-3 text-xs font-semibold text-text-muted uppercase tracking-wider mb-2">System</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-text-muted hover:bg-gray-50 hover:text-text-main group transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-text-muted hover:bg-gray-50 hover:text-text-main group transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">help</span>
+<span class="text-sm font-medium">Help Center</span>
+</a>
+</div>
+</nav>
+<div class="p-4 border-t border-gray-100">
+<div class="flex items-center gap-3 p-2 rounded-xl bg-gray-50 border border-gray-100">
+<div class="h-10 w-10 rounded-full bg-cover bg-center" data-alt="Portrait of admin user" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCe8aPR2ebbYWIkYO33w-FXCP3pCU3_nyydWEYez-oAnjseuyp06eLshU9Ypxp_okW7OfJocBk4KRLiJQx8I7wPofnPjqp24IRgKpnHbaaKBogagkT4JVGomfE256fq71eVV6PFLTg8WRRCPbVm8ZFLOp7tJXGvzvmiSNsYPprLQImGc5AqMzYfmXJmNETBMkH5Huz8kC8VKwockC-8IuWTJcCjHKsw0Oha0gJFNAV3H2E_MIrgYHU5pCD8U8hamVJ3gMNDLnIMfIRT');"></div>
+<div class="flex flex-col overflow-hidden">
+<span class="text-sm font-bold text-text-main truncate">Sarah Jenkins</span>
+<span class="text-xs text-text-muted truncate">Super Admin</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col h-screen overflow-hidden relative">
+<!-- Top Header -->
+<header class="h-16 bg-surface-light/80 backdrop-blur-md border-b border-gray-100 flex items-center justify-between px-6 z-10 sticky top-0">
+<div class="flex items-center gap-4 lg:hidden">
+<button class="p-2 text-text-main hover:bg-gray-50 rounded-lg">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<span class="font-bold text-lg">EventEase</span>
+</div>
+<h2 class="hidden lg:block text-xl font-bold text-text-main">Dashboard Overview</h2>
+<div class="flex items-center gap-4 ml-auto">
+<div class="relative hidden sm:block w-64 group">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-text-muted group-focus-within:text-primary transition-colors material-symbols-outlined text-[20px]">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-gray-50 border-none rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all outline-none placeholder:text-text-muted/70" placeholder="Search vendors, users..." type="text"/>
+</div>
+<button class="relative p-2 text-text-muted hover:text-primary hover:bg-primary/5 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[24px]">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full ring-2 ring-white"></span>
+</button>
+<button class="hidden sm:flex items-center gap-2 px-4 py-2 bg-primary text-white text-sm font-bold rounded-xl hover:bg-primary-dark transition-colors shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>New Vendor</span>
+</button>
+</div>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto p-4 lg:p-8 bg-background-light">
+<div class="max-w-7xl mx-auto space-y-8">
+<!-- Date Filter & Welcome -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+<div>
+<h3 class="text-2xl font-bold text-text-main">Welcome back, Sarah!</h3>
+<p class="text-text-muted mt-1">Here's what's happening with your vendors today.</p>
+</div>
+<div class="flex items-center bg-surface-light rounded-lg border border-gray-200 p-1 shadow-sm">
+<button class="px-3 py-1.5 text-sm font-medium rounded-md bg-gray-100 text-text-main shadow-sm">Today</button>
+<button class="px-3 py-1.5 text-sm font-medium rounded-md text-text-muted hover:text-text-main">Week</button>
+<button class="px-3 py-1.5 text-sm font-medium rounded-md text-text-muted hover:text-text-main">Month</button>
+</div>
+</div>
+<!-- KPI Stats Grid -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
+<!-- Stat Card 1 -->
+<div class="bg-surface-light p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-blue-50 text-blue-600 rounded-lg group-hover:bg-blue-100 transition-colors">
+<span class="material-symbols-outlined text-[24px]">storefront</span>
+</div>
+<span class="text-emerald-600 text-xs font-bold bg-emerald-50 px-2 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">trending_up</span> 5.2%
+                            </span>
+</div>
+<p class="text-text-muted text-sm font-medium">Total Vendors</p>
+<h4 class="text-2xl font-bold text-text-main mt-1">1,240</h4>
+</div>
+<!-- Stat Card 2 -->
+<div class="bg-surface-light p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-amber-50 text-amber-600 rounded-lg group-hover:bg-amber-100 transition-colors">
+<span class="material-symbols-outlined text-[24px]">pending_actions</span>
+</div>
+<span class="text-emerald-600 text-xs font-bold bg-emerald-50 px-2 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">trending_up</span> 12%
+                            </span>
+</div>
+<p class="text-text-muted text-sm font-medium">Pending Approvals</p>
+<h4 class="text-2xl font-bold text-text-main mt-1">35</h4>
+</div>
+<!-- Stat Card 3 -->
+<div class="bg-surface-light p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-purple-50 text-purple-600 rounded-lg group-hover:bg-purple-100 transition-colors">
+<span class="material-symbols-outlined text-[24px]">campaign</span>
+</div>
+<span class="text-rose-500 text-xs font-bold bg-rose-50 px-2 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">trending_down</span> 2.1%
+                            </span>
+</div>
+<p class="text-text-muted text-sm font-medium">Active Promos</p>
+<h4 class="text-2xl font-bold text-text-main mt-1">12</h4>
+</div>
+<!-- Stat Card 4 -->
+<div class="bg-surface-light p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-emerald-50 text-emerald-600 rounded-lg group-hover:bg-emerald-100 transition-colors">
+<span class="material-symbols-outlined text-[24px]">payments</span>
+</div>
+<span class="text-emerald-600 text-xs font-bold bg-emerald-50 px-2 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">trending_up</span> 8.5%
+                            </span>
+</div>
+<p class="text-text-muted text-sm font-medium">Revenue (Mo)</p>
+<h4 class="text-2xl font-bold text-text-main mt-1">$45k</h4>
+</div>
+<!-- Stat Card 5 -->
+<div class="bg-surface-light p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-indigo-50 text-indigo-600 rounded-lg group-hover:bg-indigo-100 transition-colors">
+<span class="material-symbols-outlined text-[24px]">group_add</span>
+</div>
+<span class="text-emerald-600 text-xs font-bold bg-emerald-50 px-2 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">trending_up</span> 15%
+                            </span>
+</div>
+<p class="text-text-muted text-sm font-medium">New Users</p>
+<h4 class="text-2xl font-bold text-text-main mt-1">820</h4>
+</div>
+<!-- Stat Card 6 -->
+<div class="bg-surface-light p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-rose-50 text-rose-600 rounded-lg group-hover:bg-rose-100 transition-colors">
+<span class="material-symbols-outlined text-[24px]">support_agent</span>
+</div>
+<span class="text-gray-500 text-xs font-bold bg-gray-100 px-2 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">remove</span> 0%
+                            </span>
+</div>
+<p class="text-text-muted text-sm font-medium">Support Tickets</p>
+<h4 class="text-2xl font-bold text-text-main mt-1">14</h4>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Urgent Tasks & Alerts (Main Column) -->
+<div class="lg:col-span-2 space-y-6">
+<div class="bg-surface-light rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+<div class="p-6 border-b border-gray-100 flex items-center justify-between">
+<h3 class="font-bold text-lg text-text-main flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[24px]">warning</span>
+                                    Urgent System Alerts
+                                </h3>
+<button class="text-sm font-medium text-primary hover:text-primary-dark">View All</button>
+</div>
+<div class="p-0">
+<div class="p-4 border-b border-gray-50 hover:bg-gray-50 transition-colors flex items-center gap-4 group cursor-pointer">
+<div class="h-10 w-10 rounded-full bg-red-100 text-red-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">report</span>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-bold text-text-main">High Volume of Reports for "WeddingBliss Photography"</h4>
+<p class="text-xs text-text-muted mt-0.5">5 user reports received in the last hour regarding cancellation policy.</p>
+</div>
+<button class="px-3 py-1.5 text-xs font-bold bg-white border border-gray-200 rounded-lg text-text-main hover:border-primary hover:text-primary transition-colors">Investigate</button>
+</div>
+<div class="p-4 border-b border-gray-50 hover:bg-gray-50 transition-colors flex items-center gap-4 group cursor-pointer">
+<div class="h-10 w-10 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-bold text-text-main">Vendor Verification Pending ( &gt; 48hrs )</h4>
+<p class="text-xs text-text-muted mt-0.5">Floral Fantasy Inc. submitted documents 3 days ago.</p>
+</div>
+<button class="px-3 py-1.5 text-xs font-bold bg-white border border-gray-200 rounded-lg text-text-main hover:border-primary hover:text-primary transition-colors">Review</button>
+</div>
+<div class="p-4 hover:bg-gray-50 transition-colors flex items-center gap-4 group cursor-pointer">
+<div class="h-10 w-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">dns</span>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-bold text-text-main">Database Maintenance Scheduled</h4>
+<p class="text-xs text-text-muted mt-0.5">Scheduled for tonight at 02:00 AM EST. Notify active users.</p>
+</div>
+<button class="px-3 py-1.5 text-xs font-bold bg-white border border-gray-200 rounded-lg text-text-main hover:border-primary hover:text-primary transition-colors">Details</button>
+</div>
+</div>
+</div>
+<!-- Recent Activity Table -->
+<div class="bg-surface-light rounded-xl shadow-sm border border-gray-100">
+<div class="p-6 border-b border-gray-100 flex items-center justify-between">
+<h3 class="font-bold text-lg text-text-main">Recent Vendor Activity</h3>
+<div class="flex gap-2">
+<button class="p-1.5 rounded-lg text-text-muted hover:bg-gray-100">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+</button>
+<button class="p-1.5 rounded-lg text-text-muted hover:bg-gray-100">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="text-xs text-text-muted border-b border-gray-100 bg-gray-50/50">
+<th class="px-6 py-3 font-semibold">Vendor Name</th>
+<th class="px-6 py-3 font-semibold">Category</th>
+<th class="px-6 py-3 font-semibold">Status</th>
+<th class="px-6 py-3 font-semibold">Date</th>
+<th class="px-6 py-3 font-semibold text-right">Action</th>
+</tr>
+</thead>
+<tbody class="text-sm">
+<tr class="border-b border-gray-50 hover:bg-gray-50/50 group">
+<td class="px-6 py-4 font-medium text-text-main flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-gray-200 bg-cover bg-center" data-alt="Vendor avatar photo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAUJ3KQRcAe_44bpB4R_W_XlBIiO5eXffb4n1KulFtE7iKnY8_tZWuEPIRvMU1bTeHsryNWE6smWRXQTnA9dVjjHD9h2lB9UD3SVpBsrg2zY_aVnIIDtAB0mpazg2vfKHBoU0lNlFqFwjHq86SToV13gBoxOhbFH8ekhIFI4YLGwOibc9lWATqmQ1y-6PB5dy9_Hmz4pjMcsY7inR_W92JjApUYIqttLYnO2itG4x8zVSHiArUNkRV2cF7PXWlDIAzdKg_D09o0P6cx');"></div>
+                                                Grand Ballroom Events
+                                            </td>
+<td class="px-6 py-4 text-text-muted">Venues</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                                    Active
+                                                </span>
+</td>
+<td class="px-6 py-4 text-text-muted">Oct 24, 2023</td>
+<td class="px-6 py-4 text-right">
+<button class="text-text-muted hover:text-primary font-medium">Manage</button>
+</td>
+</tr>
+<tr class="border-b border-gray-50 hover:bg-gray-50/50 group">
+<td class="px-6 py-4 font-medium text-text-main flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-gray-200 bg-cover bg-center" data-alt="Vendor avatar photo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBu5tw7OSfncJIEVGAGBIdHYk0tcMDU7Um_UAz9NZyGyP5s1XirWFxYrDRK9l_T-JKQ4dORkem1R9SmK_Cq-G8T965kdHe7YleldvOcw3nm4ZZlQQD5ZE1VEbUXvGBLlXPhDPyXJvo3OJS9_R8tXYA5Rzo7giYwLURE3TNI82LXKHtOBUWpnJqnAAvxnJSFCoKpmTt50ysaC1Cnx2NiFHrMClwYSNynhGExfiDFrtFgEnleZszB-xlp6-XbwvYXzcHSh1nrPxzFuQ-q');"></div>
+                                                Dreamy Dresses
+                                            </td>
+<td class="px-6 py-4 text-text-muted">Bridal Wear</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
+                                                    Pending
+                                                </span>
+</td>
+<td class="px-6 py-4 text-text-muted">Oct 23, 2023</td>
+<td class="px-6 py-4 text-right">
+<button class="text-text-muted hover:text-primary font-medium">Manage</button>
+</td>
+</tr>
+<tr class="border-b border-gray-50 hover:bg-gray-50/50 group">
+<td class="px-6 py-4 font-medium text-text-main flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-gray-200 bg-cover bg-center" data-alt="Vendor avatar photo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBReskG8vW6a9kXliBf49ezR7O9tV6oMQHYe7PCLVI5u4y40DQVWNR0khePJGGdQiQNxbGduOoua01SoBRt1hohnpZ2Tq56UGo4jfxj9CKuJBdR8q-lM1xZOw8ofHKWe8mtUBdBXsUiwLb_hx61oOO4QVxEBFlNsS5ddWlsCV6l2hjUrpVsz4OvqSBpZ3IdUy3dh4n3UhQKDefTrUb-toIEnjKBBb5wVB1DWu_t_Ki9aIm7LJXkhBnMmOozm75GQ2-Kl1ajv8TbjSPG');"></div>
+                                                Elite Catering Co.
+                                            </td>
+<td class="px-6 py-4 text-text-muted">Catering</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                                    Active
+                                                </span>
+</td>
+<td class="px-6 py-4 text-text-muted">Oct 22, 2023</td>
+<td class="px-6 py-4 text-right">
+<button class="text-text-muted hover:text-primary font-medium">Manage</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Side Stats & Timeline -->
+<div class="space-y-6">
+<!-- Promotion Requests Card -->
+<div class="bg-surface-light rounded-xl shadow-sm border border-gray-100 p-6">
+<h3 class="font-bold text-lg text-text-main mb-4">Pending Promotions</h3>
+<div class="space-y-4">
+<div class="flex items-center gap-3 p-3 rounded-lg border border-gray-100 bg-gray-50">
+<div class="h-12 w-12 rounded-lg bg-cover bg-center" data-alt="Vendor promotional banner thumbnail" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAjnnSJKiS5yUptOC0NpEO9TiWRda8wASAqaJNOLF09VxVd7jsH2ttewmZFf3qD2VZG0VKvji6H9fQRK8UGXpw8OWlmp19TGiUwF4jS7mpo_lSB2vLpSqeGubgDh9RGJJR0yOFQDVKcgG-hYelIlnbFQ88QhSK8qWRPkFWCRGeyZCBgjENN-NX3VoSH193v1AZ2aNP53lw97kI75WqbBRIhh9IzXGFZLMINLncsBU2XV8k5_4WadarPNk-B-Cnp5ZQwiwFgMGF-Gnd3');"></div>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold truncate">Summer Sale Banner</h4>
+<p class="text-xs text-text-muted">Submitted by: Luxe Decor</p>
+</div>
+<button class="text-primary hover:bg-primary/10 p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-lg border border-gray-100 bg-gray-50">
+<div class="h-12 w-12 rounded-lg bg-cover bg-center" data-alt="Vendor promotional banner thumbnail" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDMurnVho0suokcghHZupxMNKLUt_TZZOt9Kxqx5r8ddNz0QJU83DA2mCDBdSeF2XAnRCgjtFFbTlD4Dtk1jGUlvS5mij1Le_qH-a2RxQHKs6Q_e9YHyUMB7KIsHGYvL0Fxq6dLzaNWVzFx_GWajlWFLdsXiZbWG6Tk2-9zuLDaERArx8CrrxggA3Izy0sIGsheURpYKvxOs9MNo9zsQpfgVfFH3CxHbYGXASg_rlWaOQf8xApnQtpPGfRxhHNwmRoNh2RGk2XPgvVT');"></div>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold truncate">Homepage Feature</h4>
+<p class="text-xs text-text-muted">Submitted by: DJ Mike</p>
+</div>
+<button class="text-primary hover:bg-primary/10 p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+<button class="w-full mt-4 py-2 text-sm font-bold text-primary border border-primary/20 rounded-lg hover:bg-primary hover:text-white transition-colors">View All Requests</button>
+</div>
+<!-- Map/Location Card (Abstract Representation) -->
+<div class="bg-surface-light rounded-xl shadow-sm border border-gray-100 p-6">
+<h3 class="font-bold text-lg text-text-main mb-4">User Activity Map</h3>
+<div class="h-48 rounded-lg bg-gray-200 w-full overflow-hidden relative">
+<div class="absolute inset-0 bg-cover bg-center opacity-80" data-alt="Abstract map showing user density" data-location="New York" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBQBgYdN6bGQmIo_HY4ryr8RUHC9DOhRH_nR2P7taNwC1yb6mqxBTny-5_O83uKALnJSB0KCEwwnyCXYGygEZHRAlQPU-PK8PuA8hATb23aruSmq9Xu-Ez0fZTJpS0jWqiElCa8bulAvrsz5AiXmH39coDN26J19b8hwa52NyghBEAPhonDJhzSi8GnUjX2076ixj906K0LJbyquomfi-svdfmOSmarFSrUOHWnHjEHIG6pZ2womf3DbHuVZt0Z8YbaaRy2sXGMpNk1');"></div>
+<div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur px-3 py-1.5 rounded-lg shadow-sm">
+<p class="text-xs font-bold text-text-main">Top Region: New York</p>
+<p class="text-[10px] text-text-muted">45% of active users</p>
+</div>
+</div>
+</div>
+<!-- System Status -->
+<div class="bg-surface-light rounded-xl shadow-sm border border-gray-100 p-6">
+<h3 class="font-bold text-lg text-text-main mb-4">System Health</h3>
+<div class="space-y-3">
+<div>
+<div class="flex justify-between text-xs font-medium mb-1">
+<span>Server Load</span>
+<span class="text-green-600">32%</span>
+</div>
+<div class="h-2 w-full bg-gray-100 rounded-full overflow-hidden">
+<div class="h-full bg-green-500 w-[32%] rounded-full"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs font-medium mb-1">
+<span>Storage Usage</span>
+<span class="text-amber-600">78%</span>
+</div>
+<div class="h-2 w-full bg-gray-100 rounded-full overflow-hidden">
+<div class="h-full bg-amber-500 w-[78%] rounded-full"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs font-medium mb-1">
+<span>API Latency</span>
+<span class="text-green-600">24ms</span>
+</div>
+<div class="h-2 w-full bg-gray-100 rounded-full overflow-hidden">
+<div class="h-full bg-green-500 w-[15%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Space -->
+<div class="h-8"></div>
+</div>
+</main>
+</body></html>

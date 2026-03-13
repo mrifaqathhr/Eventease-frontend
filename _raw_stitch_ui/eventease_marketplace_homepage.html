@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EventEase - Wedding Vendor Marketplace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#ee2b5b",
+                        "primary-content": "#ffffff",
+                        "primary-dark": "#c91a45",
+                        "primary-light": "#fcebf0",
+                        "background-light": "#fcf8f9", 
+                        "background-dim": "#f3e7ea",
+                        "background-dark": "#1b0d11",
+                        "text-main": "#1b0d11",
+                        "text-muted": "#6b5c61",
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px",
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-sans { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background-light text-text-main font-sans min-h-screen flex flex-col">
+<!-- Navbar -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-background-dim bg-background-light/95 backdrop-blur px-6 py-4 lg:px-10">
+<div class="flex items-center gap-8">
+<a class="flex items-center gap-3 text-text-main hover:opacity-80 transition-opacity" href="#">
+<div class="size-8 text-primary">
+<span class="material-symbols-outlined text-3xl">diversity_1</span>
+</div>
+<h2 class="text-text-main text-2xl font-serif font-bold leading-tight tracking-tight">EventEase</h2>
+</a>
+<div class="hidden md:flex">
+<label class="relative flex items-center min-w-[320px]">
+<span class="absolute left-3 text-primary">
+<span class="material-symbols-outlined">search</span>
+</span>
+<input class="w-full rounded-full bg-background-dim border-none py-2.5 pl-10 pr-4 text-sm text-text-main placeholder-text-muted focus:ring-2 focus:ring-primary focus:bg-white transition-all" placeholder="Search vendors, venues, inspiration..." type="text"/>
+</label>
+</div>
+</div>
+<div class="flex items-center gap-4 lg:gap-8">
+<nav class="hidden lg:flex items-center gap-6">
+<a class="text-text-main text-sm font-medium hover:text-primary transition-colors" href="#">Venues</a>
+<a class="text-text-main text-sm font-medium hover:text-primary transition-colors" href="#">Vendors</a>
+<a class="text-text-main text-sm font-medium hover:text-primary transition-colors" href="#">Planning Tools</a>
+<a class="text-text-main text-sm font-medium hover:text-primary transition-colors" href="#">Log In</a>
+</nav>
+<div class="flex gap-3">
+<button class="hidden sm:flex h-10 items-center justify-center rounded-lg bg-primary-light px-4 text-primary text-sm font-bold hover:bg-primary/20 transition-colors">
+                    Are you a vendor?
+                </button>
+<button class="flex h-10 items-center justify-center rounded-lg bg-primary px-5 text-primary-content text-sm font-bold shadow-md hover:bg-primary-dark transition-colors">
+                    Sign Up
+                </button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col gap-16">
+<!-- Hero Section -->
+<section class="relative w-full rounded-2xl overflow-hidden min-h-[500px] flex items-center justify-center">
+<!-- Background Image -->
+<div class="absolute inset-0 z-0 bg-cover bg-center" data-alt="Elegant wedding reception table setting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAJ9HvcswEWlXM8ITs1_KEQuBWX8FT-1Uco47HivKZ3iN532EECxSuHp-jL_jYy8NDjX48YWbAC15aMVQoMys1JWwh3zLw-nshtI-xqMeJAIkwNVM8W3cehbsBnbc2713gpcocV_ZohUkjiG6b7NiZg4ZNKvIAedPejmxBWRiy93Pv9d3HtiopVnREdeqmuBP0Jank4N2Oo2GkrrBCvFDEZhFN7hKqMLl7-4fMhIxU8ppCCPoFahIXErOninsVNLsDm5iZeFJHOCZRR');">
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/30"></div>
+</div>
+<!-- Hero Content -->
+<div class="relative z-10 flex flex-col items-center text-center max-w-3xl px-4 animate-fade-in-up">
+<h1 class="text-white font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-4 drop-shadow-md">
+                    Your Dream Wedding,<br/>Planned to Perfection.
+                </h1>
+<p class="text-white/90 text-lg md:text-xl font-light mb-8 max-w-xl mx-auto drop-shadow-sm">
+                    Discover and book the finest local professionals for your special day, all in one elegant place.
+                </p>
+<!-- Search Block -->
+<div class="w-full max-w-2xl bg-white rounded-lg p-2 shadow-xl flex flex-col sm:flex-row gap-2">
+<div class="flex-1 relative flex items-center">
+<span class="absolute left-3 text-text-muted">
+<span class="material-symbols-outlined">search</span>
+</span>
+<input class="w-full border-0 bg-transparent py-3 pl-10 pr-4 text-text-main placeholder-text-muted focus:ring-0" placeholder="What are you looking for? (e.g. Photographer)" type="text"/>
+<div class="hidden sm:block w-px h-8 bg-gray-200 mx-2"></div>
+</div>
+<div class="flex-1 relative flex items-center border-t sm:border-t-0 border-gray-100">
+<span class="absolute left-3 text-text-muted">
+<span class="material-symbols-outlined">location_on</span>
+</span>
+<input class="w-full border-0 bg-transparent py-3 pl-10 pr-4 text-text-main placeholder-text-muted focus:ring-0" placeholder="Where? (e.g. New York, NY)" type="text"/>
+</div>
+<button class="bg-primary hover:bg-primary-dark text-white font-medium px-8 py-3 rounded-md transition-colors w-full sm:w-auto">
+                        Search
+                    </button>
+</div>
+</div>
+</section>
+<!-- Categories Section -->
+<section>
+<div class="flex items-center justify-between mb-8 px-2">
+<h2 class="text-text-main font-serif text-3xl font-bold">Browse by Category</h2>
+<a class="text-primary font-medium flex items-center hover:underline" href="#">
+                    View all <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+<!-- Category Item 1 -->
+<a class="group relative rounded-xl overflow-hidden aspect-square" href="#">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Beautiful wedding venue hall" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDxFCccmiEx2OHICiFWG7xbqz-CXigqxnRTxfXwcRJMWmzfasuhi8gKlXQUCXIrUXAOkzGZ7TUS3VfkqMZoFooI0E1pselwWzPSX18dsxZCKDXusqUPIlX1aX9D4orVOaYNTzBHopOwGkBB5YuUmXatTB2KP0gQQi7BWMFSGcpT9diBzTA9IO5orGxNQIqWfQeiLuSz_lctYBr4rJZrjb2d4opSHwospSuxelTjTp8U897QhSViDrpJdRIQVbYwdNH7IWPLBcCv-kD_');"></div>
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors"></div>
+<div class="absolute bottom-0 left-0 p-4">
+<p class="text-white font-bold text-lg">Venues</p>
+</div>
+</a>
+<!-- Category Item 2 -->
+<a class="group relative rounded-xl overflow-hidden aspect-square" href="#">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Photographer taking picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAK9PJ5-rMcBO2R1E-_pF9wuFVGZ1TcUbtV6c1hEFcf2AT_6ZOuboGsVNYG3R4dGyiZXLvq_9qcslffe__E4aE4m9lVbZV2M2L48H71kb1YTnjoEyOGdrdy5lc8qp5STatIaqbMm6jys0w7PZpHQ6s86yUEFnFGdxilR_uPRBoqfaYE49BTZRGGt3_0H7HTFc3UkDEqPs4S3KVd-u_EZ-ki8dhl3mdei48TCqZeRa7QYX2AqkNHJyRXPYfsWUnAYdXvLPl3Vht1Xs8J');"></div>
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors"></div>
+<div class="absolute bottom-0 left-0 p-4">
+<p class="text-white font-bold text-lg">Photographers</p>
+</div>
+</a>
+<!-- Category Item 3 -->
+<a class="group relative rounded-xl overflow-hidden aspect-square" href="#">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Wedding floral arrangement" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAhjMgfFiZdfi9t87RXMDY5TekTaLFte8EDMc5lDsZfUtRWI1_B3w5K6G-RP7fMnXot3oM75tRzzJuFIb96AdbgNkbJxTdt3p89N-9-fi5Rt4fkcrja8YF3evyvt_emOpoisl5tqhOZqXi5yWUhUYNqAA-G9S6JIi1bW4ceKiM6DES47o35u_lrNmzyNnECFgddyjDfAEeO7sfNmgv8wiH4TVCTP5zuAb48nIjuwndtFTqTcn2f-n1S0364yP66VuBSB5_JX3vuajnl');"></div>
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors"></div>
+<div class="absolute bottom-0 left-0 p-4">
+<p class="text-white font-bold text-lg">Florists</p>
+</div>
+</a>
+<!-- Category Item 4 -->
+<a class="group relative rounded-xl overflow-hidden aspect-square" href="#">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Gourmet wedding catering food" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCs4R2FXYJbKQQePbXnjVCXtXD2nFbgY_IX_XsEJuBX4kW1tvA24FAoPvh-pF4N6hbOwZ3bs-Zl0eq6tE05fNfZsZz93uZPaYN9sQCZhN6dPG8QhMvWvFBv-6UWBAuJvSvDK0zfPySlosvj6qE7nffH2HztT5HeXrGmYbc1ASt2t3o-Gv-V2lPQQYLBL8aYdlKZ_mQYPeOuTpbAILQiWWPy-vSTbqKt97ZJl8ApAJdY4Sjx4KUcGKpO6OkgRXhGP8omRL4zT180Ix1u');"></div>
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors"></div>
+<div class="absolute bottom-0 left-0 p-4">
+<p class="text-white font-bold text-lg">Catering</p>
+</div>
+</a>
+<!-- Category Item 5 -->
+<a class="group relative rounded-xl overflow-hidden aspect-square" href="#">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Wedding makeup artist working" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB6kbXOzdmy5xrYlRY2HdR5bP6XUN-cVz1qLbpGr_omAdk5iXfSW_QzwxxiQK0UTCIFeppLmKvuPinvqVR4r79MtenwYo16wg1-VCZb51yXzNjN34PHByrOFawYExyFmIvr05fRWiDJkPu5dPCXPlRRBzyLh4-zmFyv4FO7-0Nimzusw--MDzlSc-uy22o2b7rIHX9mg5-kym46RJn8KUzAArHrLCTZihiu0IR_tqYRrwqY5b8c8BUsnDbppRggGZrWLSFL78VZk6Qi');"></div>
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors"></div>
+<div class="absolute bottom-0 left-0 p-4">
+<p class="text-white font-bold text-lg">Beauty</p>
+</div>
+</a>
+<!-- Category Item 6 -->
+<a class="group relative rounded-xl overflow-hidden aspect-square" href="#">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Wedding cake and desserts" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBjBvZjjs0HYg78KkD0IbTRMI8t8_tU_fmBIW0nXqG36A2rtBsD3jOi1SHcGoMnFkC-sDtBcai0PKRiWgyX27ULNB7kMTwMAwb9cUKIGf2DOUjJP4u0GwMVwTVDPRoawKiX5OmUoDpLEg7IrU-ysdx8ACmn4ECjYjs0TAjQv5L_gaPxDjekHqowItjbwQQd73IXiJ02dVJ4y0a3B5-XHpV1CsACduzsTtTYqmzzITaQLcRb8SwmB7JjK-x_iIamfvh7scQrsLPccE86');"></div>
+<div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors"></div>
+<div class="absolute bottom-0 left-0 p-4">
+<p class="text-white font-bold text-lg">Cakes</p>
+</div>
+</a>
+</div>
+</section>
+<!-- Featured Vendors Section -->
+<section>
+<div class="flex flex-col gap-2 mb-8 px-2">
+<h2 class="text-text-main font-serif text-3xl font-bold">Featured Professionals</h2>
+<p class="text-text-muted">Top-rated vendors loved by couples like you</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Vendor Card 1 -->
+<div class="group flex flex-col bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-background-dim overflow-hidden">
+<div class="relative h-48 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Modern bright photography studio" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDGfKinQraRe3Z71j9jAvLKl32GDv6hQvZ6-CwxlIvsOdtR74kLLATlH6195ij9SL3PufuKXlnfx1S3g3qR9EaSX5ZHLPQYcALR0-j1UZZcNllvCONQhxXnuJ-MDTDfbOzmEXYXKe8CUj7oUjQpaLrm8ZCUxQbvKXiyNU7zMwui3sKzMvgBFHvr6Z3LQNN2HzhAsTHqlJF5isLVR3TJ_iPyaV9tuBnYP0QGAzriZJe3qheRN6mT3HkURG1Ry-tkIDsS2jBt3nqVVhZu');"></div>
+<div class="absolute top-3 right-3 bg-white/90 backdrop-blur rounded-full p-1.5 text-primary cursor-pointer hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-lg text-text-main truncate">Lumina Moments</h3>
+<div class="flex items-center gap-1 bg-green-50 px-1.5 py-0.5 rounded text-green-700 text-xs font-bold">
+                                4.9 <span class="material-symbols-outlined text-[10px]">star</span>
+</div>
+</div>
+<p class="text-sm text-text-muted mb-3">Photography • Brooklyn, NY</p>
+<div class="mt-auto pt-3 border-t border-background-dim flex items-center justify-between">
+<span class="text-xs font-medium text-text-muted">Starting at $2,500</span>
+<button class="text-primary text-sm font-bold hover:underline">View Profile</button>
+</div>
+</div>
+</div>
+<!-- Vendor Card 2 -->
+<div class="group flex flex-col bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-background-dim overflow-hidden">
+<div class="relative h-48 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Rustic barn wedding venue exterior" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCbV2U5GX6kYh182PhM5taEL3N8PEormoVdJJKROvcpWleDcZ3jnkiP_l8B9ZvzwdIszhEEG1-nK5l2u9OcaMFCreNWtDBIT4npet-EPjNtLWOhiCHd6axWKdZI_De2loWer0FqbvSAbAMvFScspEQG3t1I9PiuhZOo8YuGiD94BrZ3pYANiog0LyLH9n01QO4pjxyt8wvDnr-QoNI1HOM_TXMCoH9lUR0MDM46env1_lYkG5KsclFXFItM-M6L-O7wh_oUHybbow3O');"></div>
+<div class="absolute top-3 right-3 bg-white/90 backdrop-blur rounded-full p-1.5 text-text-muted hover:text-primary cursor-pointer hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-lg text-text-main truncate">The Old Barn</h3>
+<div class="flex items-center gap-1 bg-green-50 px-1.5 py-0.5 rounded text-green-700 text-xs font-bold">
+                                4.8 <span class="material-symbols-outlined text-[10px]">star</span>
+</div>
+</div>
+<p class="text-sm text-text-muted mb-3">Venue • Hudson Valley, NY</p>
+<div class="mt-auto pt-3 border-t border-background-dim flex items-center justify-between">
+<span class="text-xs font-medium text-text-muted">Capacity: 200</span>
+<button class="text-primary text-sm font-bold hover:underline">View Profile</button>
+</div>
+</div>
+</div>
+<!-- Vendor Card 3 -->
+<div class="group flex flex-col bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-background-dim overflow-hidden">
+<div class="relative h-48 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Detailed floral centerpiece closeup" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCptARd7s6bjSMpBgTgmhGrhQdonWjIgTaJH4WlwQmW5bU7tiFdNFxyGYAZIi6r9WjQhMv9s5OtbC6sVO52FABdIZapNHj7wJi-v9VLV6BSQWR-9ixGbMdmuV8sj1fhXrl55a57qpFP_LOF_ZbX7VINs3B3nRr_vLqCJ6umfGxp8HL33RgwNzNSfBSkRNxSO2xZPlzYu4q5vSQYZBv-iL8pR0U2rF7AlWpxY5XGKSPJ_muSNK6vF33PAOA5vWKyJ_wCd0KC33eYwsBg');"></div>
+<div class="absolute top-3 right-3 bg-white/90 backdrop-blur rounded-full p-1.5 text-text-muted hover:text-primary cursor-pointer hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-lg text-text-main truncate">Petal &amp; Stem</h3>
+<div class="flex items-center gap-1 bg-green-50 px-1.5 py-0.5 rounded text-green-700 text-xs font-bold">
+                                5.0 <span class="material-symbols-outlined text-[10px]">star</span>
+</div>
+</div>
+<p class="text-sm text-text-muted mb-3">Florist • Manhattan, NY</p>
+<div class="mt-auto pt-3 border-t border-background-dim flex items-center justify-between">
+<span class="text-xs font-medium text-text-muted">Custom Quotes</span>
+<button class="text-primary text-sm font-bold hover:underline">View Profile</button>
+</div>
+</div>
+</div>
+<!-- Vendor Card 4 -->
+<div class="group flex flex-col bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-background-dim overflow-hidden">
+<div class="relative h-48 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Live band playing instruments" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDm8K_nb1zZxvsII-7oUUx_ORFuNGKXQvDz3QEOm8HYAgf8Ze_YtAeQes5wb0JcwhsiacQUCMiGdjJHknFU6sZp9drKlhxY2YQSClYM6exvWAf70QCnPC1ijxqMC5yPPbKydMbVSEhwd1xIyiCWajGfJe0hHd8iYiAutyV25pszxImoLdT1UjB_WLhSRGCcj5ct07cwluylKSoOejXEQwoeCbsB2EnOmwtOTwvg-b6w7tmLcqAg25jXQwCCOzRB9TgjnKodqz88D8FZ');"></div>
+<div class="absolute top-3 right-3 bg-white/90 backdrop-blur rounded-full p-1.5 text-text-muted hover:text-primary cursor-pointer hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-bold text-lg text-text-main truncate">Groove Collective</h3>
+<div class="flex items-center gap-1 bg-green-50 px-1.5 py-0.5 rounded text-green-700 text-xs font-bold">
+                                4.7 <span class="material-symbols-outlined text-[10px]">star</span>
+</div>
+</div>
+<p class="text-sm text-text-muted mb-3">Music • Jersey City, NJ</p>
+<div class="mt-auto pt-3 border-t border-background-dim flex items-center justify-between">
+<span class="text-xs font-medium text-text-muted">Starting at $1,800</span>
+<button class="text-primary text-sm font-bold hover:underline">View Profile</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SEO Content / Info Section -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-white rounded-2xl p-8 lg:p-12 border border-background-dim">
+<div class="flex flex-col gap-6">
+<h2 class="font-serif text-3xl md:text-4xl font-bold text-text-main leading-tight">
+                    Planning made simple, <br/>so you can focus on love.
+                </h2>
+<div class="space-y-4">
+<div class="flex gap-4">
+<div class="size-10 rounded-full bg-primary-light flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">verified</span>
+</div>
+<div>
+<h3 class="font-bold text-lg text-text-main">Vetted Professionals</h3>
+<p class="text-text-muted leading-relaxed">We review every vendor to ensure they meet our high standards for quality and service.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="size-10 rounded-full bg-primary-light flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">chat_bubble</span>
+</div>
+<div>
+<h3 class="font-bold text-lg text-text-main">Direct Communication</h3>
+<p class="text-text-muted leading-relaxed">Chat directly with vendors, request quotes, and manage bookings all in one place.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="size-10 rounded-full bg-primary-light flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">savings</span>
+</div>
+<div>
+<h3 class="font-bold text-lg text-text-main">Transparent Pricing</h3>
+<p class="text-text-muted leading-relaxed">No hidden fees. See starting prices upfront and stay within your budget effortlessly.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative h-full min-h-[400px] rounded-xl overflow-hidden shadow-lg">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Couple planning wedding looking at tablet" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCUuHylcVdTBjbMKugfE5-h-Am1CAhmhoT_w4xy5txNl1aBAkJd-LS_iGx-o5u3pOZwrciqD-I78daXhZJcB9l2Cv843iUWFGkwrc1T9JWmr5_KxbxInr6AGOBSquqZjirsH3u28eub5pqWC7a_CaxCDwHvkn2o6JKop0HtcoGoBKNnW7AGoOncGaKzcTeCUJ4MV_NgpRdU4gQHfUEFkyTET3yRY5UvUvMI5Zx_ytG5VBIQFzCJ9_Ub_yrcsXmpIx9v9XKiIctjHxCc');"></div>
+</div>
+</section>
+<!-- Vendor CTA Section -->
+<section class="bg-primary-light rounded-2xl p-8 md:p-16 text-center border border-primary/10">
+<div class="max-w-3xl mx-auto flex flex-col items-center gap-6">
+<span class="bg-white px-3 py-1 rounded-full text-xs font-bold text-primary uppercase tracking-wider border border-primary/20">For Professionals</span>
+<h2 class="font-serif text-3xl md:text-4xl font-bold text-text-main">Grow your wedding business with EventEase</h2>
+<p class="text-text-muted text-lg max-w-xl">Join thousands of wedding professionals connecting with couples every day. Showcase your work and fill your calendar.</p>
+<div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+<button class="bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-lg shadow-md transition-all transform hover:-translate-y-0.5">
+                        List Your Business
+                    </button>
+<button class="bg-white hover:bg-gray-50 text-text-main font-bold py-3 px-8 rounded-lg shadow-sm border border-background-dim transition-all">
+                        Learn More
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-background-dim mt-12 pt-16 pb-8 border-t border-gray-200">
+<div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+<div class="lg:col-span-2">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary text-2xl">diversity_1</span>
+<span class="text-xl font-serif font-bold text-text-main">EventEase</span>
+</div>
+<p class="text-text-muted mb-6 max-w-xs">
+                        The modern marketplace for wedding planning. We connect couples with the perfect vendors to make their special day unforgettable.
+                    </p>
+<div class="flex gap-4">
+<a class="text-text-muted hover:text-primary transition-colors" href="#"><i class="fa fa-instagram"></i> Instagram</a>
+<a class="text-text-muted hover:text-primary transition-colors" href="#">Pinterest</a>
+<a class="text-text-muted hover:text-primary transition-colors" href="#">Twitter</a>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-text-main mb-4">Company</h4>
+<ul class="space-y-3 text-sm text-text-muted">
+<li><a class="hover:text-primary" href="#">About Us</a></li>
+<li><a class="hover:text-primary" href="#">Careers</a></li>
+<li><a class="hover:text-primary" href="#">Press</a></li>
+<li><a class="hover:text-primary" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-text-main mb-4">Discover</h4>
+<ul class="space-y-3 text-sm text-text-muted">
+<li><a class="hover:text-primary" href="#">Venues</a></li>
+<li><a class="hover:text-primary" href="#">Vendors</a></li>
+<li><a class="hover:text-primary" href="#">Real Weddings</a></li>
+<li><a class="hover:text-primary" href="#">Expert Advice</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-text-main mb-4">Professionals</h4>
+<ul class="space-y-3 text-sm text-text-muted">
+<li><a class="hover:text-primary" href="#">Vendor Login</a></li>
+<li><a class="hover:text-primary" href="#">List Your Business</a></li>
+<li><a class="hover:text-primary" href="#">Success Stories</a></li>
+<li><a class="hover:text-primary" href="#">Vendor Support</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-300 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-text-muted">
+<p>© 2024 EventEase Inc. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-text-main" href="#">Privacy Policy</a>
+<a class="hover:text-text-main" href="#">Terms of Service</a>
+<a class="hover:text-text-main" href="#">Sitemap</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

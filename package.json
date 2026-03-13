@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "appwrite": "^22.4.1",
+    "framer-motion": "^12.34.3",
+    "node-appwrite": "^22.1.2"
+  }
+}

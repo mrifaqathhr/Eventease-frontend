@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EventEase Vendor Terms</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#e8305e",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#211115",
+                        "primary-light": "#ffeef2", 
+                        "primary-dark": "#881332",
+                    },
+                    fontFamily: {
+                        display: ["Newsreader", "serif"],
+                        sans: ['"Noto Sans"', "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        lg: "1rem",
+                        xl: "1.5rem",
+                        full: "9999px",
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Noto Sans', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Newsreader', serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col text-slate-900 dark:text-slate-100 font-sans">
+<!-- Header -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md px-6 lg:px-10 py-3">
+<div class="flex items-center gap-4">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M39.5563 34.1455V13.8546C39.5563 15.708 36.8773 17.3437 32.7927 18.3189C30.2914 18.916 27.263 19.2655 24 19.2655C20.737 19.2655 17.7086 18.916 15.2073 18.3189C11.1227 17.3437 8.44365 15.708 8.44365 13.8546V34.1455C8.44365 35.9988 11.1227 37.6346 15.2073 38.6098C17.7086 39.2069 20.737 39.5564 24 39.5564C27.263 39.5564 30.2914 39.2069 32.7927 38.6098C36.8773 37.6346 39.5563 35.9988 39.5563 34.1455Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519ZM37.5563 18.7877C36.3176 19.3925 34.8502 19.8839 33.2571 20.2642C30.5836 20.9025 27.3973 21.2655 24 21.2655C20.6027 21.2655 17.4164 20.9025 14.7429 20.2642C13.1498 19.8839 11.6824 19.3925 10.4436 18.7877V34.1275C10.4515 34.1545 10.5427 34.4867 11.379 35.027C12.298 35.6207 13.7492 36.2054 15.6717 36.6644C18.0007 37.2205 20.8712 37.5564 24 37.5564C27.1288 37.5564 29.9993 37.2205 32.3283 36.6644C34.2508 36.2054 35.702 35.6207 36.621 35.027C37.4573 34.4867 37.5485 34.1546 37.5563 34.1275V18.7877ZM41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455L6.44365 13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold font-display tracking-tight">EventEase</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8 items-center">
+<nav class="flex items-center gap-6">
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#">Find Vendors</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#">Planning Tools</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#">For Business</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#">Log In</a>
+</nav>
+<button class="flex items-center justify-center rounded-xl h-10 px-5 bg-primary hover:bg-primary-dark transition-colors text-white text-sm font-bold shadow-sm shadow-primary/30">
+<span>Sign Up</span>
+</button>
+</div>
+<button class="md:hidden p-2 text-slate-600 dark:text-slate-300">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+<div class="flex flex-col lg:flex-row gap-12 max-w-7xl mx-auto">
+<!-- Sidebar Navigation -->
+<aside class="w-full lg:w-72 flex-shrink-0">
+<div class="sticky top-24 space-y-8">
+<!-- Sidebar Header -->
+<div>
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold mb-1 font-display">Legal Center</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Vendor Resources &amp; Terms</p>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-1">
+<a class="group flex items-center gap-3 px-4 py-3 rounded-xl bg-primary/10 text-primary font-medium transition-all" href="#">
+<span class="material-symbols-outlined text-[20px] font-bold">check_circle</span>
+<span class="text-sm">Vendor Eligibility</span>
+</a>
+<a class="group flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-slate-200 transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">currency_exchange</span>
+<span class="text-sm">Commission Structure</span>
+</a>
+<a class="group flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-slate-200 transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">description</span>
+<span class="text-sm">Content Guidelines</span>
+</a>
+<a class="group flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-slate-200 transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">credit_card</span>
+<span class="text-sm">Payment Terms</span>
+</a>
+<a class="group flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-slate-200 transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">privacy_tip</span>
+<span class="text-sm">Data Privacy</span>
+</a>
+<a class="group flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-slate-200 transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">cancel</span>
+<span class="text-sm">Termination</span>
+</a>
+</nav>
+<!-- Support Card -->
+<div class="bg-white dark:bg-background-dark border border-slate-200 dark:border-slate-800 p-5 rounded-xl">
+<div class="flex items-center gap-3 mb-3 text-slate-900 dark:text-slate-100 font-semibold">
+<span class="material-symbols-outlined text-primary">support_agent</span>
+                            Need Help?
+                        </div>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-4">Contact our vendor support team for specific inquiries regarding your contract.</p>
+<button class="w-full py-2.5 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                            Contact Support
+                        </button>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="flex-1 min-w-0">
+<!-- Breadcrumbs -->
+<div class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 mb-6 font-medium">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-[16px] text-slate-400">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Legal Center</a>
+<span class="material-symbols-outlined text-[16px] text-slate-400">chevron_right</span>
+<span class="text-slate-900 dark:text-slate-100">Vendor Terms</span>
+</div>
+<div class="bg-white dark:bg-background-dark rounded-2xl p-8 lg:p-12 shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="border-b border-slate-100 dark:border-slate-800 pb-8 mb-8">
+<h1 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-slate-100 mb-4 font-display">Vendor Terms of Service</h1>
+<p class="text-slate-500 dark:text-slate-400">Last updated: <span class="font-medium text-slate-700 dark:text-slate-300">October 24, 2023</span></p>
+</div>
+<div class="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-300">
+<p class="lead text-lg mb-8">
+                            Welcome to the EventEase Vendor community. These terms govern the relationship between EventEase ("Platform") and the service providers, merchants, and vendors ("Vendor") listing services on our marketplace.
+                        </p>
+<div class="space-y-12">
+<!-- Section 1 -->
+<section>
+<div class="flex items-start gap-4 mb-4">
+<span class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary font-bold text-sm font-display">1</span>
+<h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 font-display mt-1">Vendor Eligibility &amp; Verification</h2>
+</div>
+<div class="pl-12 space-y-4">
+<p>To qualify as a Vendor on EventEase, you must represent a legitimate business entity capable of entering into binding contracts. By signing up, you agree to undergo our mandatory verification process.</p>
+<ul class="list-disc pl-5 space-y-2 marker:text-primary">
+<li><strong>Business Documentation:</strong> You must provide valid tax identification and business registration documents upon request.</li>
+<li><strong>Insurance Requirements:</strong> Vendors operating in physical spaces (e.g., Venues, Caterers) must maintain active general liability insurance with coverage of at least $1,000,000.</li>
+<li><strong>Quality Standards:</strong> EventEase reserves the right to audit vendor profiles and past event performance reviews to ensure platform quality.</li>
+</ul>
+</div>
+</section>
+<!-- Section 2 -->
+<section>
+<div class="flex items-start gap-4 mb-4">
+<span class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary font-bold text-sm font-display">2</span>
+<h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 font-display mt-1">Commission &amp; Payment Structure</h2>
+</div>
+<div class="pl-12 space-y-4">
+<p>Our platform operates on a performance-based commission model designed to align our success with yours.</p>
+<div class="grid md:grid-cols-2 gap-4 my-6">
+<div class="p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50">
+<h4 class="font-bold text-slate-900 dark:text-slate-100 mb-2">Standard Commission</h4>
+<p class="text-sm">A flat <strong>12% commission</strong> applies to all bookings secured through the EventEase direct booking tool.</p>
+</div>
+<div class="p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50">
+<h4 class="font-bold text-slate-900 dark:text-slate-100 mb-2">Payout Schedule</h4>
+<p class="text-sm">Funds are released to your connected bank account <strong>48 hours after the successful completion</strong> of the booked event.</p>
+</div>
+</div>
+<p class="text-sm italic">Note: Processing fees (approx 2.9% + $0.30) charged by our payment processor (Stripe) are deducted separately from the total transaction amount.</p>
+</div>
+</section>
+<!-- Section 3 -->
+<section>
+<div class="flex items-start gap-4 mb-4">
+<span class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary font-bold text-sm font-display">3</span>
+<h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 font-display mt-1">Content &amp; Intellectual Property</h2>
+</div>
+<div class="pl-12 space-y-4">
+<p>You retain all rights to the photos, videos, and descriptions you upload to your EventEase profile. However, you grant us a license to use these materials for marketing the Platform.</p>
+<p><strong>Prohibited Content:</strong> You may not upload content that is misleading, offensive, or infringes on the copyright of others. We employ automated tools to detect stock imagery fraud.</p>
+</div>
+</section>
+<!-- Section 4 -->
+<section>
+<div class="flex items-start gap-4 mb-4">
+<span class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary font-bold text-sm font-display">4</span>
+<h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 font-display mt-1">Cancellation &amp; Dispute Resolution</h2>
+</div>
+<div class="pl-12 space-y-4">
+<p>Vendors must clearly state their cancellation policies on their listing. In the event of a dispute:</p>
+<ol class="list-decimal pl-5 space-y-2">
+<li>Users and Vendors are encouraged to resolve issues directly through the Message Center.</li>
+<li>If a resolution cannot be reached, EventEase will mediate based on the documented cancellation policy and evidence provided.</li>
+<li>Decisions made by the EventEase Trust &amp; Safety team are final regarding platform refunds.</li>
+</ol>
+</div>
+</section>
+</div>
+<div class="mt-12 pt-8 border-t border-slate-100 dark:border-slate-800">
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 bg-primary/5 rounded-xl p-6 border border-primary/10">
+<div>
+<h4 class="font-bold text-slate-900 dark:text-slate-100 mb-1">Download Agreement</h4>
+<p class="text-sm text-slate-600 dark:text-slate-400">Get a PDF copy of the Vendor Terms for your records.</p>
+</div>
+<button class="flex items-center gap-2 bg-white dark:bg-background-dark text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 hover:border-primary hover:text-primary transition-colors px-4 py-2 rounded-lg font-medium text-sm shadow-sm">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                                    Download PDF
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 mt-auto">
+<div class="container mx-auto px-4 py-12">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+<div class="col-span-2 lg:col-span-2">
+<div class="flex items-center gap-2 text-primary mb-4">
+<svg class="size-6" fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M39.5563 34.1455V13.8546C39.5563 15.708 36.8773 17.3437 32.7927 18.3189C30.2914 18.916 27.263 19.2655 24 19.2655C20.737 19.2655 17.7086 18.916 15.2073 18.3189C11.1227 17.3437 8.44365 15.708 8.44365 13.8546V34.1455C8.44365 35.9988 11.1227 37.6346 15.2073 38.6098C17.7086 39.2069 20.737 39.5564 24 39.5564C27.263 39.5564 30.2914 39.2069 32.7927 38.6098C36.8773 37.6346 39.5563 35.9988 39.5563 34.1455Z"></path>
+</svg>
+<span class="text-lg font-bold font-display text-slate-900 dark:text-slate-100">EventEase</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm max-w-sm">
+                        Empowering vendors and planners to create unforgettable moments. The trusted platform for professional event management.
+                    </p>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-slate-100 mb-4">Platform</h4>
+<ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">Find Vendors</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Planning Tools</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Success Stories</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Pricing</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-slate-100 mb-4">Business</h4>
+<ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">Vendor Dashboard</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Advertising</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">API Docs</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Partnerships</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-slate-100 mb-4">Legal</h4>
+<ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+<li><a class="text-primary font-medium" href="#">Vendor Terms</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">User Agreement</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Cookie Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-slate-100 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-xs text-slate-400">© 2023 EventEase Inc. All rights reserved.</p>
+<div class="flex gap-4">
+<a class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors" href="#">
+<span class="sr-only">Twitter</span>
+<svg class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+</a>
+<a class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors" href="#">
+<span class="sr-only">LinkedIn</span>
+<svg class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

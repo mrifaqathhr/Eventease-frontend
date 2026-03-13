@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EventEase Admin Vendor Approvals</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e8305e",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#211115",
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader", "serif"],
+                        "sans": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans antialiased min-h-screen flex flex-col overflow-x-hidden">
+<div class="flex min-h-screen w-full flex-row">
+<!-- Sidebar -->
+<aside class="w-72 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col justify-between p-4 hidden lg:flex sticky top-0 h-screen">
+<div class="flex flex-col gap-8">
+<div class="flex items-center gap-3 px-2">
+<div class="bg-primary/10 rounded-full p-2 h-10 w-10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl icon-fill">celebration</span>
+</div>
+<div class="flex flex-col">
+<h1 class="font-display text-lg font-bold text-slate-900 dark:text-white leading-tight">EventEase</h1>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider">Admin Panel</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 bg-primary/5 text-primary rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined icon-fill">storefront</span>
+<span class="text-sm font-medium">Vendor Approvals</span>
+<span class="ml-auto bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded-full">12</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">calendar_month</span>
+<span class="text-sm font-medium">Event Listings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">group</span>
+<span class="text-sm font-medium">User Management</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">payments</span>
+<span class="text-sm font-medium">Transactions</span>
+</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<div class="h-px bg-slate-200 dark:bg-slate-800 mx-2"></div>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+<div class="flex items-center gap-3 px-3 py-2">
+<div class="bg-center bg-no-repeat bg-cover rounded-full h-9 w-9 ring-2 ring-white dark:ring-slate-800 shadow-sm" data-alt="Profile picture of Sarah Jenkins" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCWQRPAX_0gi3VW90DGt1vS1rpBr2ckATM6zJ5VIIZ_uWW1Pfh6hA3RO1rTEFN2Hveg2GLUCHOYKpBbymiW4Uvblr8kHXKgG36W2S5wOIyB7JTLlut0w5OTML6HiN9NpI9VPSuXsZs-qHN-UM3YDw49wrepjXcjaXrpSVdKF9xq2TJZvRdJ7-E2bqHsy00fSHVsjzg3rq-X3TsyweR8a87Qk9Eb8wSwGV-X0SXihumIp1Bv4kz5fMM1IKdB8qYcdgAN-EhY26r8qGwq");'></div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">Sarah Jenkins</span>
+<span class="text-xs text-slate-500 dark:text-slate-400">Super Admin</span>
+</div>
+<button class="ml-auto text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+<span class="material-symbols-outlined text-xl">logout</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col h-screen overflow-y-auto relative">
+<!-- Header / Top Bar -->
+<header class="sticky top-0 z-20 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-8 py-5 flex flex-col gap-6">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="flex flex-col gap-1">
+<h2 class="font-display text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Vendor Approvals</h2>
+<p class="text-slate-600 dark:text-slate-400 text-sm">Review and manage pending vendor registration requests.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-600 dark:text-slate-300 text-sm font-medium shadow-sm hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+<span>Filters</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-600 dark:text-slate-300 text-sm font-medium shadow-sm hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Export</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 justify-between items-center">
+<!-- Search -->
+<div class="relative w-full max-w-md">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-slate-400">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-2.5 border border-slate-200 dark:border-slate-700 rounded-lg leading-5 bg-white dark:bg-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary sm:text-sm shadow-sm transition-all" placeholder="Search business, email, or ID..." type="text"/>
+</div>
+<!-- Tabs/Pills -->
+<div class="flex w-full sm:w-auto overflow-x-auto pb-1 sm:pb-0 gap-2 no-scrollbar">
+<button class="whitespace-nowrap px-4 py-1.5 bg-primary text-white rounded-full text-sm font-medium shadow-sm shadow-primary/20">All Requests</button>
+<button class="whitespace-nowrap px-4 py-1.5 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 rounded-full text-sm font-medium transition-colors">Catering</button>
+<button class="whitespace-nowrap px-4 py-1.5 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 rounded-full text-sm font-medium transition-colors">Venues</button>
+<button class="whitespace-nowrap px-4 py-1.5 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 rounded-full text-sm font-medium transition-colors">Entertainment</button>
+<button class="whitespace-nowrap px-4 py-1.5 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 rounded-full text-sm font-medium transition-colors">Logistics</button>
+</div>
+</div>
+</header>
+<!-- List Content -->
+<div class="flex-1 p-6 md:p-8 space-y-4">
+<!-- Card 1 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow duration-200 p-5 flex flex-col md:flex-row gap-6">
+<!-- Image -->
+<div class="w-full md:w-48 h-32 md:h-auto shrink-0 rounded-lg bg-cover bg-center relative overflow-hidden" data-alt="Gourmet food catering setup" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuARP5UiJYvft3S-gh7lM5kMf0PF0BAnvcUlvqj-4ZRs6AvlBxsK6weLKcI9rCAHvtFQJrhYqeCx2Gc4oWOhajqP7zs7uw2RxzSjBTBG8hnh9hLp14cClOgbqGAT9FxrYENpSWhHhyo-IV-EhbAMQV-Q81Q8DQAbH9BoGaIxYJihx8Y9Jjb20GwWMnF6wHjH8GhYwAq9WGnZuynOyyqwqNj3X_i1eRJf0wOSEDYORSPi_p0CPKWdvj7nAtZd9UdvdWK1jBYhTSiphUL3');">
+<div class="absolute top-2 left-2 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider text-primary">Catering</div>
+</div>
+<!-- Content -->
+<div class="flex-1 flex flex-col justify-between gap-3">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white font-display">Gourmet Delights Catering</h3>
+<span class="text-xs text-slate-500 dark:text-slate-400 font-medium bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">ID: #VD-2049</span>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-3 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                            San Francisco, CA • Submitted Oct 24, 2023
+                        </p>
+<p class="text-slate-600 dark:text-slate-300 text-sm line-clamp-2">
+                            Premier catering service specializing in organic, locally-sourced ingredients for corporate events and weddings. Fully licensed and insured with a capacity for up to 500 guests.
+                        </p>
+</div>
+<div class="flex flex-wrap items-center gap-4 text-xs font-medium text-slate-500 dark:text-slate-400 mt-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-slate-400">mail</span>
+                            contact@gourmetdelights.com
+                        </div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-slate-400">call</span>
+                            (415) 555-0192
+                        </div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-slate-400">language</span>
+                            www.gourmetdelights.com
+                        </div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex md:flex-col items-center justify-center gap-3 md:border-l border-slate-100 dark:border-slate-800 md:pl-6 min-w-[140px]">
+<button class="w-full bg-primary hover:bg-rose-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors shadow-sm shadow-primary/30 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+                        Approve
+                    </button>
+<button class="w-full bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+                        Reject
+                    </button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow duration-200 p-5 flex flex-col md:flex-row gap-6">
+<!-- Image -->
+<div class="w-full md:w-48 h-32 md:h-auto shrink-0 rounded-lg bg-cover bg-center relative overflow-hidden" data-alt="Grand event hall venue" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDiR1_xksTCVoRkxazYu1SjOq1_2L8wELntU2jvqx7HrebB-74QSz7bXSlQpVxBuzT6YbqbAvx2viqEvipT1gQHow5pJBhwez2ItICFl7_sYb2rOTWbHjqdxqzzPvvfLh731IKBny5eBbCuemHy3LcvoZQPjntXg2XpI6cNQcFszrWbx_i65U16G3jK1UzngGJRR6TsdM54h1UVt1BplYPxz5yJfKxmamX54I3v4JFSRw7mtnfdlMeshN-Yj_nzUxJGoZs8A4E8Dqy2');">
+<div class="absolute top-2 left-2 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider text-primary">Venue</div>
+</div>
+<!-- Content -->
+<div class="flex-1 flex flex-col justify-between gap-3">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white font-display">The Crystal Hall</h3>
+<span class="text-xs text-slate-500 dark:text-slate-400 font-medium bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">ID: #VD-2055</span>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-3 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                            Austin, TX • Submitted Oct 23, 2023
+                        </p>
+<p class="text-slate-600 dark:text-slate-300 text-sm line-clamp-2">
+                            A historic downtown venue offering 5,000 sq ft of elegant event space. Features include vaulted ceilings, crystal chandeliers, and a full-service bar area.
+                        </p>
+</div>
+<div class="flex flex-wrap items-center gap-4 text-xs font-medium text-slate-500 dark:text-slate-400 mt-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-slate-400">mail</span>
+                            events@crystalhall.com
+                        </div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-slate-400">call</span>
+                            (512) 555-0884
+                        </div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-slate-400">language</span>
+                            www.crystalhall.com
+                        </div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex md:flex-col items-center justify-center gap-3 md:border-l border-slate-100 dark:border-slate-800 md:pl-6 min-w-[140px]">
+<button class="w-full bg-primary hover:bg-rose-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors shadow-sm shadow-primary/30 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+                        Approve
+                    </button>
+<button class="w-full bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+                        Reject
+                    </button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow duration-200 p-5 flex flex-col md:flex-row gap-6">
+<!-- Image -->
+<div class="w-full md:w-48 h-32 md:h-auto shrink-0 rounded-lg bg-cover bg-center relative overflow-hidden" data-alt="Live band performing on stage" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuByJHlJ9uLxWuZb4FCxduRlL00kqlytyiQNldn57uh3Y5Z8QI1JMW-o4q67zJdYeQE5IMlPTkSUv5akrUWD_-_MNbAu_pAxZgQFQZ3ZvDsjyZ2HcM-D6f6pPJHuUwIxb50-Uoa67cwEAF_O08fg0tPZpm_9jKAW2fdixhjK9qmL2uPfd0obip4x9efCLLTV2LKIthpoZII4vWxrV0VPqxignLpaIOOfg3-v0I7eO9Th7anN-zWQxX1btJ41FnYYZkn8lp2sq_FDgwxD');">
+<div class="absolute top-2 left-2 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider text-primary">Entertainment</div>
+</div>
+<!-- Content -->
+<div class="flex-1 flex flex-col justify-between gap-3">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white font-display">SoundWave Productions</h3>
+<span class="text-xs text-slate-500 dark:text-slate-400 font-medium bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">ID: #VD-2061</span>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-3 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                            Nashville, TN • Submitted Oct 22, 2023
+                        </p>
+<p class="text-slate-600 dark:text-slate-300 text-sm line-clamp-2">
+                            Full-service audio and lighting production company. We provide DJ services, live bands, and state-of-the-art sound systems for festivals and private parties.
+                        </p>
+</div>
+<div class="flex flex-wrap items-center gap-4 text-xs font-medium text-slate-500 dark:text-slate-400 mt-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-slate-400">mail</span>
+                            booking@soundwave.net
+                        </div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-slate-400">call</span>
+                            (615) 555-0922
+                        </div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-slate-400">language</span>
+                            www.soundwave.net
+                        </div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex md:flex-col items-center justify-center gap-3 md:border-l border-slate-100 dark:border-slate-800 md:pl-6 min-w-[140px]">
+<button class="w-full bg-primary hover:bg-rose-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors shadow-sm shadow-primary/30 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+                        Approve
+                    </button>
+<button class="w-full bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+                        Reject
+                    </button>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow duration-200 p-5 flex flex-col md:flex-row gap-6 opacity-60">
+<!-- Image -->
+<div class="w-full md:w-48 h-32 md:h-auto shrink-0 rounded-lg bg-cover bg-center relative overflow-hidden" data-alt="Logistics truck and warehouse" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBfBPJLXR9N67LRAWRRBnQjVhYCcxFEncvErL9K-dVKnUGlzG6OwXovZvHKBrl5y7Z_0aEg7oNdfPTlUXk4grs0tt7i1w1MmUJc1ZVXjdn92X84oum8O1Lx10nOhsoGrKRLSEWGAWrkIwfUlmbPe3FZSBvUncLwBv3ofYARKYZPn3sQHd9IWPcouAyljDAFmPm3daxjV6uW_mCpdtlXx5PD7hd1HJbO56dtWoxLbsa0f9_UBkKGOp8IGFW02HrRUyiICWnzDoHxOqt1');">
+<div class="absolute top-2 left-2 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider text-primary">Logistics</div>
+<div class="absolute inset-0 bg-slate-900/10 flex items-center justify-center">
+</div>
+</div>
+<!-- Content -->
+<div class="flex-1 flex flex-col justify-between gap-3">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white font-display">SwiftMove Logistics (Reviewing...)</h3>
+<span class="text-xs text-slate-500 dark:text-slate-400 font-medium bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">ID: #VD-2041</span>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-3 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                            Chicago, IL • Submitted Oct 21, 2023
+                        </p>
+<p class="text-slate-600 dark:text-slate-300 text-sm line-clamp-2">
+                            Event furniture and equipment transport specialists. We handle careful transportation of staging, chairs, and delicate decor items across the tri-state area.
+                        </p>
+</div>
+<div class="flex flex-wrap items-center gap-4 text-xs font-medium text-slate-500 dark:text-slate-400 mt-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-slate-400">mail</span>
+                            ops@swiftmove.co
+                        </div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-slate-400">call</span>
+                            (312) 555-0101
+                        </div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex md:flex-col items-center justify-center gap-3 md:border-l border-slate-100 dark:border-slate-800 md:pl-6 min-w-[140px]">
+<div class="text-xs font-semibold uppercase tracking-wide text-slate-400 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full">
+                        Processing
+                    </div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="p-6 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 sticky bottom-0">
+<div class="flex items-center justify-between">
+<p class="text-sm text-slate-500 dark:text-slate-400">
+                    Showing <span class="font-medium text-slate-900 dark:text-white">1</span> to <span class="font-medium text-slate-900 dark:text-white">4</span> of <span class="font-medium text-slate-900 dark:text-white">12</span> pending requests
+                </p>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 disabled:opacity-50 disabled:cursor-not-allowed" disabled="">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<button class="p-2 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
