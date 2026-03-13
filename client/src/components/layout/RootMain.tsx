@@ -16,8 +16,9 @@ export default function RootMain({ children }: { children: React.ReactNode }) {
     const pathname = usePathname();
     const isAuthRoute = pathname.startsWith('/auth');
     const isDashboardRoute = pathname.startsWith('/vendor/dashboard');
+    const isAdminRoute = pathname.startsWith('/admin');
 
-    if (isAuthRoute || isDashboardRoute) {
+    if (isAuthRoute || isDashboardRoute || isAdminRoute) {
         // Full-screen, edge-to-edge — these layouts handle their own structure
         return <>{children}</>;
     }
