@@ -206,11 +206,11 @@ export default function SearchResultsGrid({
                     <div className="flex items-center justify-between mb-7">
                         <div>
                             <h2 className="text-2xl font-bold text-text-main font-serif">Planning Inspiration</h2>
-                            <p className="text-text-muted mt-1 text-sm">Tips and ideas for your perfect day</p>
+                            <p className="text-text-muted mt-1 text-sm">Tips and inspiration for your perfect day</p>
                         </div>
                         <Link
                             href="/blog"
-                            className="text-primary font-bold text-sm hover:underline whitespace-nowrap"
+                            className="text-primary font-medium hover:text-primary-dark transition-colors inline-flex items-center gap-1 text-sm group"
                         >
                             View all articles
                         </Link>

@@ -3,6 +3,7 @@
 import { useState, FormEvent } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -40,6 +41,7 @@ export default function ContactForm() {
     });
 
     const [submitStatus, setSubmitStatus] = useState<SubmitStatus>('idle');
+    const router = useRouter();
 
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -59,16 +61,8 @@ export default function ContactForm() {
         try {
             // Appwrite SDK call will go here, e.g.:
             // await databases.createDocument(DATABASE_ID, INQUIRIES_COLLECTION_ID, ID.unique(), { ...form });
-            await new Promise((res) => setTimeout(res, 1000)); // placeholder delay
-            setSubmitStatus('success');
-            setForm({
-                firstName: '',
-                lastName: '',
-                email: '',
-                phone: '',
-                subject: 'General Inquiry',
-                message: '',
-            });
+            await new Promise((res) => setTimeout(res, 800)); // placeholder delay
+            router.push('/inquiry-success');
         } catch {
             setSubmitStatus('error');
         }
@@ -231,11 +225,11 @@ export default function ContactForm() {
 
                         <p className="text-center text-xs text-slate-400 mt-2">
                             By sending this message, you agree to our{' '}
-                            <Link href="/terms" className="underline hover:text-primary transition-colors">
+                            <Link href="/vendor-terms" className="underline hover:text-primary transition-colors">
                                 Terms of Service
                             </Link>{' '}
                             and{' '}
-                            <Link href="/privacy" className="underline hover:text-primary transition-colors">
+                            <Link href="/privacy-policy" className="underline hover:text-primary transition-colors">
                                 Privacy Policy
                             </Link>
                             .

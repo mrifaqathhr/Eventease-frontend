@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
@@ -21,6 +22,8 @@ const itemVariants = {
 };
 
 export default function VendorCTA() {
+    const router = useRouter();
+
     return (
         <section className="bg-primary-light rounded-2xl p-8 md:p-16 text-center border border-primary/10 overflow-hidden">
             <motion.div
@@ -58,6 +61,7 @@ export default function VendorCTA() {
                 >
                     <motion.button
                         type="button"
+                        onClick={() => router.push('/auth/login')}
                         className="bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-lg shadow-md cursor-pointer"
                         whileHover={{ scale: 1.04, y: -2 }}
                         whileTap={{ scale: 0.97 }}
@@ -67,6 +71,7 @@ export default function VendorCTA() {
                     </motion.button>
                     <motion.button
                         type="button"
+                        onClick={() => router.push('/about')}
                         className="bg-white hover:bg-gray-50 text-text-main font-bold py-3 px-8 rounded-lg shadow-sm border border-background-dim cursor-pointer"
                         whileHover={{ scale: 1.04, y: -2 }}
                         whileTap={{ scale: 0.97 }}

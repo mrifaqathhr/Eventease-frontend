@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 type AdminTopbarProps = {
   onToggleSidebar?: () => void;
@@ -91,13 +92,13 @@ export default function AdminTopbar({ onToggleSidebar }: AdminTopbarProps) {
             <span className="absolute -top-0.5 -right-0.5 h-2 w-2 rounded-full bg-primary shadow-[0_0_0_2px_rgba(255,255,255,1)]" />
             <span className="h-3 w-3 rounded-full border border-current" />
           </button>
-          <div className="hidden items-center gap-2 rounded-full border border-gray-200 bg-white px-2 py-1 shadow-sm sm:flex">
+          <Link href="/admin/dashboard/settings" className="hidden items-center gap-2 rounded-full border border-gray-200 bg-white px-2 py-1 shadow-sm sm:flex hover:bg-gray-50 transition-colors">
             <div className="h-6 w-6 rounded-full bg-gradient-to-br from-gray-200 to-gray-100" />
             <div className="flex flex-col">
               <span className="text-xs font-medium text-text-main">Admin</span>
               <span className="text-[11px] text-text-muted">Super Admin</span>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     </header>

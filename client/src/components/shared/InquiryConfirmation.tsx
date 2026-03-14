@@ -23,10 +23,10 @@ export default function InquiryConfirmation() {
                         
                         {/* Nav Links */}
                         <nav className="hidden md:flex items-center gap-8">
-                            <Link href="/venues" className="text-sm font-medium hover:text-primary transition-colors dark:text-gray-300">Venues</Link>
-                            <Link href="/vendors" className="text-sm font-medium hover:text-primary transition-colors dark:text-gray-300">Vendors</Link>
+                            <Link href="/search?category=venues" className="text-sm font-medium hover:text-primary transition-colors dark:text-gray-300">Venues</Link>
+                            <Link href="/search" className="text-sm font-medium hover:text-primary transition-colors dark:text-gray-300">Vendors</Link>
                             <Link href="/planning-tools" className="text-sm font-medium hover:text-primary transition-colors dark:text-gray-300">Planning Tools</Link>
-                            <Link href="/real-weddings" className="text-sm font-medium hover:text-primary transition-colors dark:text-gray-300">Real Weddings</Link>
+                            <Link href="/blog" className="text-sm font-medium hover:text-primary transition-colors dark:text-gray-300">Real Weddings</Link>
                         </nav>
                     </div>
                     <div className="flex items-center gap-4">

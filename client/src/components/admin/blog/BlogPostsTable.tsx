@@ -25,10 +25,9 @@ const statusConfig: Record<
   BlogPostStatus,
   { label: string; className: string }
 > = {
-  published:
-    "bg-emerald-50 text-emerald-700 border border-emerald-100",
-  draft: "bg-amber-50 text-amber-700 border border-amber-100",
-  scheduled: "bg-gray-100 text-gray-700 border border-gray-200",
+  published: { label: "Published", className: "bg-emerald-50 text-emerald-700 border border-emerald-100" },
+  draft: { label: "Draft", className: "bg-amber-50 text-amber-700 border border-amber-100" },
+  scheduled: { label: "Scheduled", className: "bg-gray-100 text-gray-700 border border-gray-200" },
 };
 
 export default function BlogPostsTable({

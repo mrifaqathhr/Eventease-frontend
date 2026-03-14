@@ -15,7 +15,7 @@ export default function AccountRejectedMessage() {
                     <h2 className="text-slate-900 dark:text-slate-100 text-xl font-bold tracking-tight">EventEase</h2>
                 </Link>
                 <div className="flex items-center gap-6">
-                    <Link href="/help" className="text-slate-600 dark:text-slate-300 hover:text-primary text-sm font-medium transition-colors">Help Center</Link>
+                    <Link href="/blog" className="text-sm font-medium leading-normal hover:text-primary transition-colors">Real Weddings</Link>
                     <div className="flex items-center gap-3">
                         <div className="h-8 w-8 rounded-full bg-slate-200 dark:bg-slate-700 bg-cover bg-center" style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDxbf5q8tlW2V-COTvaAvB1cBxKfs5xQ6LSXmcc7mZfoDQ7pNTOG_6JyS0bAEURgqPPPkROSj162C1SoiwG_anaoMcdV8Iaci4qcUx63ThbBl8xwVVsi7Wk4mg6VXbQ97fQucvEQgZFrsXJqKisXKah4cATtdH5iLQFblPLM0JY4FbJfdHH3QQEv-E2vMktNOQvSdrcC2f2EgV2DoNPw3LoZGS9N-W1UKjIPx8iTkjO1HWpYqew8fP4Ydti0qXRqcEBAfzNQaI6z70D")' }}></div>
                         <button className="text-sm font-medium text-slate-900 dark:text-slate-100 hover:text-primary transition-colors">Sign Out</button>
@@ -91,11 +91,11 @@ export default function AccountRejectedMessage() {
                                 Edit &amp; Reapply
                             </Link>
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mt-2">
-                                <Link href="/support" className="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors flex items-center gap-1 group">
+                                <Link href="/search" className="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors flex items-center gap-1 group">
                                     <span className="material-symbols-outlined text-[18px] group-hover:scale-110 transition-transform">support_agent</span>
                                     Contact Support
                                 </Link>
-                                <Link href="/" className="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors flex items-center gap-1 group">
+                                <Link href="/search?category=venues" className="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors flex items-center gap-1 group">
                                     <span className="material-symbols-outlined text-[18px] group-hover:-translate-x-1 transition-transform">arrow_back</span>
                                     Return to Homepage
                                 </Link>

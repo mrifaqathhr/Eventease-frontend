@@ -47,7 +47,7 @@ export default function DashboardSidebar({ isOpen, onClose }: DashboardSidebarPr
         <div className="flex h-full flex-col justify-between p-6">
             <div className="flex flex-col gap-8">
                 {/* Brand */}
-                <div className="flex items-center gap-3">
+                <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
                     <div className="relative size-12 overflow-hidden rounded-full bg-primary/10 shadow-sm flex items-center justify-center">
                         <span className="material-symbols-outlined text-primary text-2xl">diamond</span>
                     </div>
@@ -57,7 +57,7 @@ export default function DashboardSidebar({ isOpen, onClose }: DashboardSidebarPr
                         </h1>
                         <p className="text-sm font-medium text-text-muted">Vendor Portal</p>
                     </div>
-                </div>
+                </Link>
 
                 {/* Navigation */}
                 <nav className="flex flex-col gap-1" role="navigation" aria-label="Dashboard Navigation">

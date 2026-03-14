@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
@@ -26,6 +27,15 @@ const itemVariants = {
 export default function HeroSection() {
     const [searchWhat, setSearchWhat] = useState('');
     const [searchWhere, setSearchWhere] = useState('');
+    const router = useRouter();
+
+    const handleSearch = () => {
+        const query = new URLSearchParams();
+        if (searchWhat) query.append('q', searchWhat);
+        if (searchWhere) query.append('location', searchWhere);
+        const queryString = query.toString();
+        router.push(queryString ? `/search?${queryString}` : '/search');
+    };
 
     return (
         <section className="relative w-full rounded-2xl overflow-hidden min-h-[500px] flex items-center justify-center">
@@ -103,6 +113,7 @@ export default function HeroSection() {
 
                     <button
                         type="button"
+                        onClick={handleSearch}
                         className="bg-primary hover:bg-primary-dark text-white font-medium px-8 py-3 rounded-md transition-colors w-full sm:w-auto cursor-pointer"
                     >
                         Search

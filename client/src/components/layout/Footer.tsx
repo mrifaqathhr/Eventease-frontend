@@ -10,27 +10,27 @@ const linkGroups: FooterLinkGroup[] = [
         title: 'Company',
         links: [
             { label: 'About Us', href: '/about' },
-            { label: 'Careers', href: '/careers' },
-            { label: 'Press', href: '/press' },
+            { label: 'Careers', href: '/about' },
+            { label: 'Press', href: '/about' },
             { label: 'Contact', href: '/contact' },
         ],
     },
     {
         title: 'Discover',
         links: [
-            { label: 'Venues', href: '/venues' },
-            { label: 'Vendors', href: '/vendors' },
-            { label: 'Real Weddings', href: '/real-weddings' },
+            { label: 'Venues', href: '/search?category=venues' },
+            { label: 'Vendors', href: '/search' },
+            { label: 'Real Weddings', href: '/blog' },
             { label: 'Expert Advice', href: '/blog' },
         ],
     },
     {
         title: 'Professionals',
         links: [
-            { label: 'Vendor Login', href: '/vendor/login' },
-            { label: 'List Your Business', href: '/vendor/register' },
-            { label: 'Success Stories', href: '/success-stories' },
-            { label: 'Vendor Support', href: '/vendor/support' },
+            { label: 'Vendor Login', href: '/auth/login' },
+            { label: 'List Your Business', href: '/auth/register' },
+            { label: 'Success Stories', href: '/blog' },
+            { label: 'Vendor Support', href: '/contact' },
         ],
     },
 ];
@@ -90,10 +90,12 @@ export default function Footer() {
                 {/* Bottom Bar */}
                 <div className="border-t border-gray-300 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-text-muted">
                     <p>© 2024 EventEase Inc. All rights reserved.</p>
-                    <div className="flex gap-6">
-                        <Link href="/privacy" className="hover:text-text-main transition-colors">Privacy Policy</Link>
-                        <Link href="/terms" className="hover:text-text-main transition-colors">Terms of Service</Link>
+                    <div className="flex gap-6 items-center">
+                        <Link href="/privacy-policy" className="hover:text-text-main transition-colors">Privacy Policy</Link>
+                        <Link href="/vendor-terms" className="hover:text-text-main transition-colors">Terms of Service</Link>
                         <Link href="/sitemap" className="hover:text-text-main transition-colors">Sitemap</Link>
+                        {/* Discreet dev map link */}
+                        <Link href="/dev-map" className="text-[10px] text-gray-200 hover:text-primary transition-colors ml-4" aria-label="Developer Route Map">dev</Link>
                     </div>
                 </div>
             </div>

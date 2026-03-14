@@ -44,9 +44,9 @@ export default function VendorCard({
     isFeatured,
     badge,
     tags = [],
-    slug,
 }: VendorCardProps) {
-    const profileHref = slug ? `/vendors/${slug}` : `/vendors/${id}`;
+    // Demo prototype wiring: route to search page since individual vendor pages aren't full built out
+    const profileHref = '/search';
 
     return (
         <motion.div

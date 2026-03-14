@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 interface DashboardTopbarProps {
     title: string;
@@ -64,14 +65,13 @@ export default function DashboardTopbar({ title, onMenuClick }: DashboardTopbarP
                 </button>
 
                 {/* User avatar */}
-                <div
-                    className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center ring-2 ring-offset-2 ring-primary/20 overflow-hidden flex-shrink-0 cursor-pointer"
-                    role="button"
-                    tabIndex={0}
-                    aria-label="User profile menu"
+                <Link
+                    href="/vendor/dashboard/profile"
+                    className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center ring-2 ring-offset-2 ring-primary/20 overflow-hidden flex-shrink-0 cursor-pointer hover:bg-primary/20 transition-colors"
+                    aria-label="User profile settings"
                 >
                     <span className="material-symbols-outlined text-primary text-xl">person</span>
-                </div>
+                </Link>
             </div>
         </header>
     );

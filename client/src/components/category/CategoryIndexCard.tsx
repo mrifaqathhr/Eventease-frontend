@@ -13,7 +13,7 @@ export interface CategoryIndexCardProps {
     description: string;
     /** CTA label, e.g. "Browse Venues" */
     ctaLabel: string;
-    /** Route, e.g. /categories/venues */
+    /** Route, e.g. /search?category=venues */
     href: string;
     /** Vendor / listing count label, e.g. "2.4k+" */
     count: string;

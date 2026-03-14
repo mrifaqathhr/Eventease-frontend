@@ -1,0 +1,98 @@
+
+> client@0.1.0 dev
+> next dev
+
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /Users/rifa/eventease/package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * /Users/rifa/eventease/client/package-lock.json
+
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.6:3000
+- Environments: .env.local
+
+✓ Starting...
+✓ Ready in 626ms
+⨯ Error: Dynamic href `/blog/[slug]` found in <Link> while using the `/app` router, this is not supported. Read more: https://nextjs.org/docs/messages/app-dir-dynamic-href
+    at ignore-listed frames {
+  digest: '1972785952@E267'
+}
+ GET /dev-map 500 in 1324ms (compile: 1164ms, render: 161ms)
+✓ Compiled in 392ms
+✓ Compiled in 44ms
+ GET /dev-map 200 in 161ms (compile: 72ms, render: 88ms)
+✓ Compiled in 1697ms
+Persisting failed: Unable to write SST file 00002347.sst
+
+Caused by:
+    No such file or directory (os error 2)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+
+thread 'tokio-runtime-worker' (5628095) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:156:17:
+Failed to restore task data (corrupted database or bug): Meta for EsmAssetReference::get_referenced_asset (TaskId 544542))
+
+Caused by:
+    0: Looking up data for TaskId 544542 from database failed
+    1: Unable to open static sorted file referenced from 00002339.meta
+    2: Unable to open static sorted file 00002332.sst
+    3: No such file or directory (os error 2)
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+
+thread 'tokio-runtime-worker' (5632500) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:156:17:
+Failed to restore task data (corrupted database or bug): Meta for EsmAssetReference::get_referenced_asset (TaskId 378414))
+
+Caused by:
+    0: Looking up data for TaskId 378414 from database failed
+    1: Unable to open static sorted file referenced from 00002345.meta
+    2: Unable to open static sorted file 00002342.sst
+    3: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (5631871) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:156:17:
+Failed to restore task data (corrupted database or bug): Meta for EsmAssetReference::get_referenced_asset (TaskId 378414))
+
+Caused by:
+    0: Looking up data for TaskId 378414 from database failed
+    1: Unable to open static sorted file referenced from 00002345.meta
+    2: Unable to open static sorted file 00002342.sst
+    3: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (5632500) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:156:17:
+Failed to restore task data (corrupted database or bug): Meta for <ModuleAssetContext as AssetContext>::process_resolve_result (TaskId 473696))
+
+Caused by:
+    0: Looking up data for TaskId 473696 from database failed
+    1: Unable to open static sorted file referenced from 00002345.meta
+    2: Unable to open static sorted file 00002342.sst
+    3: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (5631871) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:156:17:
+Failed to restore task data (corrupted database or bug): Meta for <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info (TaskId 451829))
+
+Caused by:
+    0: Looking up data for TaskId 451829 from database failed
+    1: Unable to open static sorted file referenced from 00002339.meta
+    2: Unable to open static sorted file 00002332.sst
+    3: No such file or directory (os error 2)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+
+thread 'tokio-runtime-worker' (5628095) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:156:17:
+Failed to restore task data (corrupted database or bug): Meta for parse (TaskId 248031))
+
+Caused by:
+    0: Looking up data for TaskId 248031 from database failed
+    1: Unable to open static sorted file referenced from 00002345.meta
+    2: Unable to open static sorted file 00002342.sst
+    3: No such file or directory (os error 2)
+
+thread 'tokio-runtime-worker' (5628095) panicked at /Users/geist/dev/actions-runner/_work/next.js/next.js/turbopack/crates/turbo-tasks-backend/src/backend/operation/mod.rs:156:17:
+Failed to restore task data (corrupted database or bug): Meta for parse (TaskId 248031))
+
+Caused by:
+    0: Looking up data for TaskId 248031 from database failed
+    1: Unable to open static sorted file referenced from 00002345.meta
+    2: Unable to open static sorted file 00002342.sst
+    3: No such file or directory (os error 2)

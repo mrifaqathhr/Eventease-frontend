@@ -95,7 +95,7 @@ export default function VendorManagementPage() {
         searchValue={search}
         onSearchChange={setSearch}
         statusFilter={statusFilter}
-        onStatusFilterChange={setStatusFilter}
+        onStatusFilterChange={(value) => setStatusFilter(value as VendorRowStatus | "all")}
         showingLabel={`Showing 1-${filteredRows.length} of ${MOCK_ROWS.length}`}
       />
       <VendorManagementTable

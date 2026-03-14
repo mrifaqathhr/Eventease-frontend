@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import RootMain from '@/components/layout/RootMain';
+import { AuthProvider } from "../lib/AuthContext";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -45,7 +46,9 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-background-light text-text-main font-sans min-h-screen flex flex-col antialiased">
-        <RootMain>{children}</RootMain>
+        <AuthProvider>
+          <RootMain>{children}</RootMain>
+        </AuthProvider>
       </body>
     </html>
   );

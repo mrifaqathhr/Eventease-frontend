@@ -16,9 +16,9 @@ export default function ResetSuccessMessage() {
                         <h2 className="text-xl font-bold leading-tight tracking-[-0.015em] font-serif">EventEase</h2>
                     </Link>
                     <nav className="hidden md:flex items-center gap-9">
-                        <Link href="/vendors" className="text-sm font-medium leading-normal hover:text-primary transition-colors">Vendors</Link>
+                        <Link href="/search?category=venues" className="text-sm font-medium leading-normal hover:text-primary transition-colors">Venues</Link>
                         <Link href="/tools" className="text-sm font-medium leading-normal hover:text-primary transition-colors">Planning Tools</Link>
-                        <Link href="/real-weddings" className="text-sm font-medium leading-normal hover:text-primary transition-colors">Real Weddings</Link>
+                        <Link href="/blog" className="text-sm font-medium leading-normal hover:text-primary transition-colors">Real Weddings</Link>
                     </nav>
                     <div className="flex items-center gap-4">
                         <Link href="/auth/login" className="hidden sm:block text-sm font-medium leading-normal hover:text-primary transition-colors">Sign In</Link>

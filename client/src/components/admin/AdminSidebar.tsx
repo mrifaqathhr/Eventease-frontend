@@ -77,7 +77,7 @@ function SidebarContent({
 
   return (
     <div className={sidebarBaseClasses}>
-      <div className="flex items-center gap-3 px-6 py-5 border-b border-gray-100">
+      <Link href="/" className="flex items-center gap-3 px-6 py-5 border-b border-gray-100 hover:opacity-80 transition-opacity">
         <div className="h-10 w-10 rounded-full bg-gradient-to-br from-primary to-rose-400 flex items-center justify-center text-white shadow-md shadow-primary/20">
           <span className="text-sm font-semibold tracking-tight">EE</span>
         </div>
@@ -87,7 +87,7 @@ function SidebarContent({
           </span>
           <span className="text-lg font-bold leading-tight">EventEase</span>
         </div>
-      </div>
+      </Link>
 
       <nav className="flex-1 overflow-y-auto px-4 py-4 space-y-4">
         <div className="space-y-1">

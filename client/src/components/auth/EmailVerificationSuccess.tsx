@@ -17,8 +17,8 @@ export default function EmailVerificationSuccess() {
                     </Link>
                     <nav className="hidden md:flex items-center gap-8">
                         <Link href="/" className="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium">Home</Link>
-                        <Link href="/vendors" className="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium">Vendors</Link>
-                        <Link href="/how-it-works" className="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium">How it Works</Link>
+                        <Link href="/search" className="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium">Vendors</Link>
+                        <Link href="/blog" className="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium">Blog</Link>
                         <Link href="/auth/login" className="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium">Log In</Link>
                     </nav>
                     <div className="flex items-center gap-4">

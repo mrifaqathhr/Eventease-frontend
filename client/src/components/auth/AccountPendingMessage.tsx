@@ -18,8 +18,8 @@ export default function AccountPendingMessage() {
                     <div className="hidden md:flex items-center gap-9">
                         <Link href="/vendor/dashboard" className="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm font-medium leading-normal">Dashboard</Link>
                         <Link href="/vendor/profile" className="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm font-medium leading-normal">Profile</Link>
-                        <Link href="/vendor/settings" className="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm font-medium leading-normal">Settings</Link>
-                        <Link href="/help" className="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm font-medium leading-normal">Help</Link>
+                        <Link href="/blog" className="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm font-medium leading-normal">Blog</Link>
+                        <Link href="/search" className="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm font-medium leading-normal">Search</Link>
                     </div>
                     <div className="flex items-center gap-4">
                         <div className="size-8 rounded-full bg-slate-200 overflow-hidden" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuD5sZ75GUkdMSMnc7ExCf1k4cQOG7Qzt7_eq8ddLC_Qr5yN91l6mQsfpNXVrhTx4wIQJqPcavfUJI0JIlE7XSoRxGJezZQjosHYBisU6MqCzvSFGiPhwn-cUCpc696zqhp3nk7KeY29C8QtM8JjUs0I-kTxiB5_ejwed9jYorSDDWGc0TMtLgBte1quSJo_aY2o13kYvVdgavFDRsQnjKR-bptny3sdHna97J8-4e022l34IuzNc-QYrdlTBw7FQrCtTj70iZDbYYqa')", backgroundSize: "cover" }}></div>
