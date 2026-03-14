@@ -24,7 +24,7 @@ export default function RegisterForm() {
     const [businessName, setBusinessName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
-    const [category, setCategory] = useState(SERVICE_CATEGORIES[0]);
+    const [category, setCategory] = useState<string>(SERVICE_CATEGORIES[0]);
     const [location, setLocation] = useState('');
     const [password, setPassword] = useState('');
     const [agreeTerms, setAgreeTerms] = useState(false);
@@ -54,7 +54,7 @@ export default function RegisterForm() {
                 className="w-full max-w-md"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
             >
                 {/* Mobile logo (visible only on small screens where sidebar is hidden) */}
                 <div className="lg:hidden flex justify-center mb-8">

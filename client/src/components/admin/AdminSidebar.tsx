@@ -43,7 +43,7 @@ export default function AdminSidebar({ isOpen, onClose }: AdminSidebarProps) {
         return pathname.startsWith(href);
     };
 
-    const SidebarContent = () => (
+    const sidebarContent = (
         <div className="flex h-full flex-col justify-between">
             {/* Brand */}
             <div className="p-6 flex items-center gap-3 border-b border-gray-100">
@@ -145,7 +145,7 @@ export default function AdminSidebar({ isOpen, onClose }: AdminSidebarProps) {
         <>
             {/* Desktop sidebar */}
             <aside className="hidden lg:flex w-64 flex-shrink-0 flex-col border-e border-gray-100 bg-white h-full">
-                <SidebarContent />
+                {sidebarContent}
             </aside>
 
             {/* Mobile backdrop */}
@@ -183,7 +183,7 @@ export default function AdminSidebar({ isOpen, onClose }: AdminSidebarProps) {
                         >
                             <span className="material-symbols-outlined">close</span>
                         </button>
-                        <SidebarContent />
+                        {sidebarContent}
                     </motion.aside>
                 )}
             </AnimatePresence>

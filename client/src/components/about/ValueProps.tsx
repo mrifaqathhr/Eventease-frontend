@@ -90,7 +90,7 @@ const cardVariants = {
     visible: {
         opacity: 1,
         y: 0,
-        transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as number[] },
+        transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
     },
 };
 
@@ -99,7 +99,7 @@ const featureVariants = {
     visible: {
         opacity: 1,
         x: 0,
-        transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as number[] },
+        transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as const },
     },
 };
 
@@ -162,7 +162,7 @@ function HowItWorksSection() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
             >
                 <h2 className="font-serif text-3xl font-bold text-text-main">Planning Made Simple</h2>
             </motion.div>
@@ -210,7 +210,7 @@ function WhyChooseSection() {
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
-                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as const }}
                     >
                         <h2 className="mb-6 font-serif text-4xl font-bold text-text-main">
                             Why Couples Trust Us
@@ -251,7 +251,7 @@ function WhyChooseSection() {
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
-                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as const, delay: 0.15 }}
                     >
                         <div className="grid grid-cols-2 gap-4">
                             {/* Offset image 1 */}

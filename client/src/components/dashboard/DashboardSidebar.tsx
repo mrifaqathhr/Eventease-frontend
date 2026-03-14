@@ -43,7 +43,7 @@ export default function DashboardSidebar({ isOpen, onClose }: DashboardSidebarPr
         return pathname.startsWith(href);
     };
 
-    const SidebarContent = () => (
+    const sidebarContent = (
         <div className="flex h-full flex-col justify-between p-6">
             <div className="flex flex-col gap-8">
                 {/* Brand */}
@@ -123,7 +123,7 @@ export default function DashboardSidebar({ isOpen, onClose }: DashboardSidebarPr
         <>
             {/* Desktop sidebar — always visible */}
             <aside className="hidden lg:flex w-72 flex-shrink-0 flex-col border-e border-background-dim bg-white h-full">
-                <SidebarContent />
+                {sidebarContent}
             </aside>
 
             {/* Mobile overlay backdrop */}
@@ -162,7 +162,7 @@ export default function DashboardSidebar({ isOpen, onClose }: DashboardSidebarPr
                         >
                             <span className="material-symbols-outlined">close</span>
                         </button>
-                        <SidebarContent />
+                        {sidebarContent}
                     </motion.aside>
                 )}
             </AnimatePresence>

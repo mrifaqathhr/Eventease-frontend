@@ -169,6 +169,7 @@ export default function BlogPageClient() {
                 title="The Ultimate Guide to Modern Micro-Weddings in 2024"
                 excerpt="Discover why intimate celebrations are taking over and how to plan a luxurious small-scale event without compromising on style."
                 backgroundImage="https://lh3.googleusercontent.com/aida-public/AB6AXuA_fWZu-QnK77E6cPgjUyV1DR2e_uSYgWrzPWujJ-xP-UBaJ0ZfPKkxiwFAZcjxiBbGd4V198r5-gz3ntZJT3wdq96rrRzbrs5wH62eY_J8q4Hq0ilrNrGL4PZzGCu6tnTIAoZPGoHa0XgI_v8IRhW2t9mUjAGvrI3Whbelax7kt7_hXJqB7JujCMY0BPrEcjySB4Ij7yLczuZX0nD-_codhrRZYLx9Hw7poAc67ny96ovRd0tzfqLr4I_37uHs6mazMmN_e-0UfAtu"
+                imageAlt="Intimate, luxurious outdoor micro-wedding setup under string lights"
                 category="Featured Story"
                 href="/blog/micro-weddings-guide-2024"
             />
