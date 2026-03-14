@@ -87,7 +87,7 @@ export default function BrowseByCategory() {
             >
                 <h2 className="text-text-main font-serif text-3xl font-bold">Browse by Category</h2>
                 <Link
-                    href="/search"
+                    href="/categories"
                     className="text-primary font-medium hover:text-primary-dark transition-colors inline-flex items-center gap-1 group"
                 >
                     View all{' '}
